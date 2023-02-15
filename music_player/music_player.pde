@@ -22,21 +22,30 @@ void setup() {
 void draw() {
   if ( activateWindow == true ) background(0);
   //
-  println ( soundEffect0.position(), soundEffect0.length() );
-  println ("When does the sound stop? Indicates delay");
+  //Debugging the Effective Length of the Sound Effect to code a delay
+  //println ( soundEffect0.position(), soundEffect0.length() );
+  //println ("When does the sound stop? Indicates delay");
+  //Debugging a sound to shorten a file play
+  println( soundEffect0.position(), soundEffect0.length() );
   //
 } //End draw
 //
 void keyPressed() {
   //
-  soundEffect0.play();
-  soundEffect0.rewind();
+  //soundEffect0.play();
+  //soundEffect0.rewind();
   delay(4000); //millisecconds read from draw() println() debugging
-  println ("KeyPressed:", soundEffect0.length() );
-  if (key=='0' ) song0.loop(0);
-  if (key=='=' ) soundEffect0.play();
-  if ( key=='Q' || key=='q' ) exit();
-  if ( key==CODED && key==ESC ) exit();
+  //println ( "KeyPressed:", soundEffect0.length() );
+  //
+  keyPressedShortCuts();
+  //
+  //Quit Button Key Board Shortcut
+  if ( key == 'Q' || key == 'q' ) {
+    int time = 7000;
+    soundEffect1.play(time); //only need partial file, use millisecconds
+    soundEffect1.rewind();
+  }
+  
   //
 } //End keyPressed
 //
