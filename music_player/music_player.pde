@@ -39,14 +39,6 @@ void keyPressed() {
   //
   keyPressedShortCuts();
   //
-  //Quit Button Key Board Shortcut
-  if ( key == 'Q' || key == 'q' ) {
-    int time = 7000;
-    soundEffect1.play(time); //only need partial file, use millisecconds
-    soundEffect1.rewind();
-  }
-  
-  //
 } //End keyPressed
 //
 void mousePressed() {
