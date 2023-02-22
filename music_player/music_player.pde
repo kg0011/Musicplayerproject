@@ -7,8 +7,8 @@ import ddf.minim.ugens.*;
 //
 //Global Variables
 Minim minim;
-AudioPlayer song0, song1, song2, song3, song4, song5, song6, song7;
-AudioPlayer soundEffect0, soundEffect1;
+AudioPlayer song0, song1, song2, song3, song4, song5, song6, song7, song8, song9, song10, song11, song12, song13, song14, song15;
+AudioPlayer soundEffect0, soundEffect1, soundEffect3, soundEffect4;
 //
 Boolean activateWindow=false;
 //

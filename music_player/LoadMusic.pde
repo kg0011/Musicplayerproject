@@ -1,4 +1,5 @@
 void loadMusic() {
+  //
   minim = new Minim(this);
   //
   //Concatenation of Pathway + File Name
@@ -34,14 +35,14 @@ void loadMusic() {
   song7 = minim.loadFile( musicPathway + simplestFileName );
   soundEffect0 = minim.loadFile( soundEffectPathway + stingFileName );
   soundEffect1 = minim.loadFile( soundEffectPathway + clodeDoorFileName );
-  song8 = minim.loadFile( musicPathway + FileName );
-  song9 = minim.loadFile( musicPathway + FileName );
-  song10 = minim.loadFile( musicPathway + FileName );
-  song11 = minim.loadFile( musicPathway + FileName );
-  song12 = minim.loadFile( musicPathway + FileName );
-  song13 = minim.loadFile( musicPathway + FileName );
-  song14 = minim.loadFile( musicPathway + FileName );
-  song15 = minim.loadFile( musicPathway + FileName );
-  soundEffect3 = minim.loadFile( soundEffectPathway + FileName );
-  soundEffect4 = minim.loadFile( soundEffectPathway + FileName );
+  song8 = minim.loadFile( musicPathway + tillNoonFileName );
+  song9 = minim.loadFile( musicPathway + runAwayFileName );
+  song10 = minim.loadFile( musicPathway + odysseyFileName );
+  song11 = minim.loadFile( musicPathway + gardenFileName );
+  song12 = minim.loadFile( musicPathway + luckyCharmFileName );
+  song13 = minim.loadFile( musicPathway + timeFileName );
+  song14 = minim.loadFile( musicPathway + fallingFileName );
+  song15 = minim.loadFile( musicPathway + loveMeFileName );
+  soundEffect3 = minim.loadFile( soundEffectPathway + soundEffect3FileName );
+  soundEffect4 = minim.loadFile( soundEffectPathway + soundEffect4FileName );
 }//End loadMusic
