@@ -37,7 +37,7 @@ void setup() {
   pauseY2 = centerY - buttonReferenceMeasure * 0.5;
   stopX = pauseX - buttonReferenceMeasure * 0;
   stopY = pauseY - buttonReferenceMeasure * -1.5;
-  playX = pauseX - buttonReferenceMeasure * 0;                                   //Figure out how to move fast forward arrows to center (look at this code to help)
+  playX = pauseX - buttonReferenceMeasure * 0;
   playY = pauseY - buttonReferenceMeasure * -1;
   playX1 = pauseX2 - buttonReferenceMeasure * -0.25;
   playY1 = pauseY2 - buttonReferenceMeasure * -0.50;
@@ -93,34 +93,36 @@ void setup() {
   prevY3 = pauseY - buttonReferenceMeasure * -1;
   prevX4 = pauseX - buttonReferenceMeasure * 3;
   prevY4 = pauseY - buttonReferenceMeasure * 0;
-  muteX = pauseX - buttonReferenceMeasure * 0;
-  muteY = pauseY - buttonReferenceMeasure * 0;
-  muteX1 = pauseX - buttonReferenceMeasure * 0;
-  muteY1 = pauseY - buttonReferenceMeasure * -1;
-  muteX2 = pauseX - buttonReferenceMeasure * 0;
-  muteY2 = pauseY - buttonReferenceMeasure * 0;
-  muteX3 = pauseX - buttonReferenceMeasure * 0;
-  muteY3 = pauseY - buttonReferenceMeasure * 0;
-  muteX4 = pauseX - buttonReferenceMeasure * 0;
-  muteY4 = pauseY - buttonReferenceMeasure * 0;
-  muteX5 = pauseX - buttonReferenceMeasure * 0;
-  muteY5 = pauseY - buttonReferenceMeasure * 0;
-  muteX6 = pauseX - buttonReferenceMeasure * 0;
-  muteY6 = pauseY - buttonReferenceMeasure * 0;
-  muteX7 = pauseX - buttonReferenceMeasure * 0;
-  muteY7 = pauseY - buttonReferenceMeasure * 0;
-  muteX8 = pauseX - buttonReferenceMeasure * 0;
-  muteY8 = pauseY - buttonReferenceMeasure * 0;
-  muteX9 = pauseX - buttonReferenceMeasure * 0;
-  muteY9 = pauseY - buttonReferenceMeasure * 0;
-  muteX10 = pauseX - buttonReferenceMeasure * 0;
-  muteY10 = pauseY - buttonReferenceMeasure * 0;
-  muteX11 = pauseX - buttonReferenceMeasure * 0;
-  muteY11 = pauseY - buttonReferenceMeasure * 0;
+  muteX = muteX12 - buttonReferenceMeasure * 0;
+  muteY = muteY12 - buttonReferenceMeasure * 0;
+  muteX1 = muteX12 - buttonReferenceMeasure * -0.25;
+  muteY1 = muteY12 - buttonReferenceMeasure * -1;
+  muteX2 = muteX12 - buttonReferenceMeasure * -0.25;
+  muteY2 = muteY12 - buttonReferenceMeasure * 0;              //first of three lines
+  muteX3 = muteX12 - buttonReferenceMeasure * 0;
+  muteY3 = muteY12 - buttonReferenceMeasure * 0;
+  muteX4 = muteX12 - buttonReferenceMeasure * -0.45;
+  muteY4 = muteY12 - buttonReferenceMeasure * -0.7;
+  muteX5 = muteX12 - buttonReferenceMeasure * -0.45;
+  muteY5 = muteY12 - buttonReferenceMeasure * -0.3;             //third of three lines
+  
+  muteX6 = muteX12 - buttonReferenceMeasure * 0;
+  muteY6 = muteY12 - buttonReferenceMeasure * 0;
+  muteX7 = muteX12 - buttonReferenceMeasure * -0.65;
+  muteY7 = muteY12 - buttonReferenceMeasure * -0.75;
+  muteX8 = muteX12 - buttonReferenceMeasure * -0.65;
+  muteY8 = muteY12 - buttonReferenceMeasure * -0.25;          //speaker shape thing
+  
+  muteX9 = muteX12 - buttonReferenceMeasure * 0;
+  muteY9 = muteY12 - buttonReferenceMeasure * 0;
+  muteX10 = muteX12 - buttonReferenceMeasure * -0.35;
+  muteY10 = muteY12 - buttonReferenceMeasure * -0.85;
+  muteX11 = muteX12 - buttonReferenceMeasure * -0.35;
+  muteY11 = muteY12 - buttonReferenceMeasure * -0.15;
   muteX12 = pauseX - buttonReferenceMeasure * 5.5;
   muteY12 = pauseY - buttonReferenceMeasure * 3;
   muteWidthDiammeter = pauseX - buttonReferenceMeasure * -5;
-  muteHeightDiammeter = pauseY - buttonReferenceMeasure * 1.75;
+  muteHeightDiammeter = pauseY - buttonReferenceMeasure * 1.75;     //seccond of three lines
   //
 } //End setup
 //
@@ -139,43 +141,43 @@ void draw() {
   //rect( spaceX, spaceY, spaceWidth, spaceHeight );
   //
   //Stop Button
-  //rect( stopX, stopY, buttonSide, buttonSide ); //Layout
+  rect( stopX, stopY, buttonSide, buttonSide ); //Layout
   //
   //Pause Button
   rect( pauseX1, pauseY1, buttonSide, buttonSide );
-  //rect( pauseX, pauseY, buttonSide * 0.3, buttonSide ); //Layout
-  //rect( pauseX2, pauseY2, buttonSide * 0.3, buttonSide );
+  rect( pauseX, pauseY, buttonSide * 0.3, buttonSide ); //Layout
+  rect( pauseX2, pauseY2, buttonSide * 0.3, buttonSide );
   //
   //Play Button
   //rect( playX3, playY3, buttonSide, buttonSide );
-  //triangle( playX, playY, playX1, playY1, playX2, playY2 ); //Layout
+  triangle( playX, playY, playX1, playY1, playX2, playY2 ); //Layout
   //
   //Mute Button
   rect( muteX12, muteY12, buttonSide, buttonSide );
-  curve( muteX, muteY, muteX1, muteY1, muteX2, muteY2, muteWidthDiammeter * 0.75, muteHeightDiammeter );           //find how to move mute shapes
-  //curve( muteX3, muteY3, muteX4, muteY4, muteX5, muteY5, muteWidthDiammeter, muteHeightDiammeter );
-  //curve( muteX6, muteY6, muteX7, muteY7, muteX8, muteY8, muteWidthDiammeter, muteHeightDiammeter );  //three curved lines
-  //curve( muteX9, muteY9, muteX10, muteY10, muteX11, muteY11, muteWidthDiammeter, muteHeightDiammeter );  //far right part, wide
+  curve( muteX, muteY, muteX1, muteY1, muteX2, muteY2, muteWidthDiammeter * 0.25, muteHeightDiammeter * -1.5 );
+  curve( muteX9, muteY9, muteX10, muteY10, muteX11, muteY11, muteWidthDiammeter * 0.2, muteHeightDiammeter * -1.25 );
+  curve( muteX3, muteY3, muteX4, muteY4, muteX5, muteY5, muteWidthDiammeter * 0.15, muteHeightDiammeter * -0.625 );
+  curve( muteX6, muteY6, muteX7, muteY7, muteX8, muteY8, muteWidthDiammeter, muteHeightDiammeter );                        //fix this next class
   //
   //Fast Forawrd in the song
   //rect( ffX7, ffY7, buttonSide, buttonSide );
-  //triangle( ffX1, ffY1, ffX2, ffY2, ffX3, ffY3 ); //Layout
-  //triangle( ffX4, ffY4, ffX5, ffY5, ffX6, ffY6 );
+  triangle( ffX1, ffY1, ffX2, ffY2, ffX3, ffY3 ); //Layout
+  triangle( ffX4, ffY4, ffX5, ffY5, ffX6, ffY6 );
   //
   //Reverse in the song
   //rect( rvrX7, rvrY7, buttonSide, buttonSide );
-  //triangle( rvrX1, rvrY1, rvrX2, rvrY2, rvrX3, rvrY3 ); //Layout
-  //triangle( rvrX4, rvrY4, rvrX5, rvrY5, rvrX6, rvrY6 );
+  triangle( rvrX1, rvrY1, rvrX2, rvrY2, rvrX3, rvrY3 ); //Layout
+  triangle( rvrX4, rvrY4, rvrX5, rvrY5, rvrX6, rvrY6 );
   //
   //Next Button, skip file
   //rect( nextX4, nextY4, buttonSide, buttonSide );
-  //triangle( nextX1, nextY1, nextX2, nextY2, nextX3, nextY3 ); //Layout
-  //rect( nextX, nextY, buttonSide * 0.3, buttonSide );
+  triangle( nextX1, nextY1, nextX2, nextY2, nextX3, nextY3 ); //Layout
+  rect( nextX, nextY, buttonSide * 0.3, buttonSide );
   //
   //Previous Button
   //rect( prevX4, prevY4, buttonSide, buttonSide );
-  //rect( prevX, prevY, buttonSide * 0.3, buttonSide ); //Layout
-  //triangle( prevX1, prevY1, prevX2, prevY2, prevX3, prevY3 );
+  rect( prevX, prevY, buttonSide * 0.3, buttonSide ); //Layout
+  triangle( prevX1, prevY1, prevX2, prevY2, prevX3, prevY3 );
   //
   //Loop the song once
   //Students to develop
