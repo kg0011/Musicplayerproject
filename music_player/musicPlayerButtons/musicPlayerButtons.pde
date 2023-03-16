@@ -42,7 +42,7 @@ void setup() {
   playX1 = pauseX2 - buttonReferenceMeasure * -0.25;
   playY1 = pauseY2 - buttonReferenceMeasure * -0.50;
   playX2 = pauseX1 - buttonReferenceMeasure * 0;
-  playY2 = pauseY1 - buttonReferenceMeasure * 0;                                    //Note: numbers such as 1 being put into the "*" field seem to invert the shape
+  playY2 = pauseY1 - buttonReferenceMeasure * 0;
   playX3 = pauseX - buttonReferenceMeasure * 0;
   playY3 = pauseY - buttonReferenceMeasure * 0;
   ffX1 = pauseX - buttonReferenceMeasure * -2;
@@ -108,10 +108,10 @@ void setup() {
   
   muteX6 = muteX12 - buttonReferenceMeasure * 0;
   muteY6 = muteY12 - buttonReferenceMeasure * 0;
-  muteX7 = muteX12 - buttonReferenceMeasure * -0.65;
-  muteY7 = muteY12 - buttonReferenceMeasure * -0.75;
-  muteX8 = muteX12 - buttonReferenceMeasure * -0.65;
-  muteY8 = muteY12 - buttonReferenceMeasure * -0.25;          //speaker shape thing
+  muteX7 = muteX12 - buttonReferenceMeasure * -0.7;
+  muteY7 = muteY12 - buttonReferenceMeasure * -0.8;
+  muteX8 = muteX12 - buttonReferenceMeasure * -0.7;
+  muteY8 = muteY12 - buttonReferenceMeasure * -0.2;          //speaker shape thing
   
   muteX9 = muteX12 - buttonReferenceMeasure * 0;
   muteY9 = muteY12 - buttonReferenceMeasure * 0;
@@ -157,7 +157,7 @@ void draw() {
   curve( muteX, muteY, muteX1, muteY1, muteX2, muteY2, muteWidthDiammeter * 0.25, muteHeightDiammeter * -1.5 );
   curve( muteX9, muteY9, muteX10, muteY10, muteX11, muteY11, muteWidthDiammeter * 0.2, muteHeightDiammeter * -1.25 );
   curve( muteX3, muteY3, muteX4, muteY4, muteX5, muteY5, muteWidthDiammeter * 0.15, muteHeightDiammeter * -0.625 );
-  curve( muteX6, muteY6, muteX7, muteY7, muteX8, muteY8, muteWidthDiammeter, muteHeightDiammeter );                        //fix this next class
+  curve( muteX6, muteY6, muteX7, muteY7, muteX8, muteY8, muteWidthDiammeter * 0.35, muteHeightDiammeter * -1 );                        //fix this next class
   //
   //Fast Forawrd in the song
   //rect( ffX7, ffY7, buttonSide, buttonSide );
