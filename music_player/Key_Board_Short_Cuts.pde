@@ -18,16 +18,6 @@ void musicShortCuts() {
   if ( key == '8' ) song7.loop(0);
   if ( key == '=' ) soundEffect0.loop(0);
   if ( key == '-' ) soundEffect1.loop(0);
-  if ( key == 'w' ) song8.loop(0);
-  if ( key == 'e' ) song9.loop(0);
-  if ( key == 'r' ) song10.loop(0);
-  if ( key == 't' ) song11.loop(0);
-  if ( key == 'y' ) song12.loop(0);
-  if ( key == 'u' ) song13.loop(0);
-  if ( key == 'i' ) song14.loop(0);
-  if ( key == 'o' ) song15.loop(0);
-  if ( key == '[' ) soundEffect3.loop(0);
-  if ( key == ']' ) soundEffect4.loop(0);
 }//End musicShortCuts
 //
 void quitButtons() {
