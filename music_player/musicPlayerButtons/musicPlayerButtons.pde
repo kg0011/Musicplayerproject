@@ -3,10 +3,10 @@ float buttonReferenceMeasure;
 float buttonSide, spaceWidth, spaceHeight;
 float pauseX, pauseY, pauseX1, pauseY1, pauseX2, pauseY2;
 float stopX, stopY, stopX1, stopY1, stopX2, stopY2, stopWidth, stopHeight;
-float playX, playY, playX1, playY1, playX2, playY2, playX3, playY3;                     //( X3 and Y3 are for the box where you click to pause instead of the arrow only )
+float playX, playY, playX1, playY1, playX2, playY2, playX3, playY3;
 float muteX, muteY, muteX1, muteY1, muteX2, muteY2, muteX3, muteY3, muteX4, muteY4, muteX5, muteY5, muteX6, muteY6, muteX7, muteY7, muteX8, muteY8, muteX9, muteY9, muteX10, muteY10, muteX11, muteY11, muteX12, muteY12, muteWidthDiammeter, muteHeightDiammeter;
 float ffX1, ffY1, ffX2, ffY2, ffX3, ffY3, ffX4, ffY4, ffX5, ffY5, ffX6, ffY6, ffX7, ffY7;
-float rvrX1, rvrY1, rvrX2, rvrY2, rvrX3, rvrY3, rvrX4, rvrY4, rvrX5, rvrY5, rvrX6, rvrY6, rvrX7, rvrY7;  //( ffX7, ffY7, rvrX7, and rvrY7 are also boxes for clicking on )
+float rvrX1, rvrY1, rvrX2, rvrY2, rvrX3, rvrY3, rvrX4, rvrY4, rvrX5, rvrY5, rvrX6, rvrY6, rvrX7, rvrY7;
 float nextX, nextY, nextX1, nextY1, nextX2, nextY2, nextX3, nextY3, nextX4, nextY4;
 float prevX, prevY, prevX1, prevY1, prevX2, prevY2, prevX3, prevY3, prevX4, prevY4;
 //float loop1
@@ -108,10 +108,10 @@ void setup() {
   
   muteX6 = muteX12 - buttonReferenceMeasure * 0;
   muteY6 = muteY12 - buttonReferenceMeasure * 0;
-  muteX7 = muteX12 - buttonReferenceMeasure * -0.7;
-  muteY7 = muteY12 - buttonReferenceMeasure * -0.8;
-  muteX8 = muteX12 - buttonReferenceMeasure * -0.7;
-  muteY8 = muteY12 - buttonReferenceMeasure * -0.2;          //speaker shape thing
+  muteX7 = muteX12 - buttonReferenceMeasure * -0.6;
+  muteY7 = muteY12 - buttonReferenceMeasure * -0.85;
+  muteX8 = muteX12 - buttonReferenceMeasure * -0.6;
+  muteY8 = muteY12 - buttonReferenceMeasure * -0.15;          //speaker shape thing
   
   muteX9 = muteX12 - buttonReferenceMeasure * 0;
   muteY9 = muteY12 - buttonReferenceMeasure * 0;
@@ -121,6 +121,8 @@ void setup() {
   muteY11 = muteY12 - buttonReferenceMeasure * -0.15;
   muteX12 = pauseX - buttonReferenceMeasure * 5.5;
   muteY12 = pauseY - buttonReferenceMeasure * 3;
+  muteX13 = pauseX - buttonReferenceMeasure * 5.5;
+  muteY13 = pauseY - buttonReferenceMeasure * 3;
   muteWidthDiammeter = pauseX - buttonReferenceMeasure * -5;
   muteHeightDiammeter = pauseY - buttonReferenceMeasure * 1.75;     //seccond of three lines
   //
@@ -157,7 +159,8 @@ void draw() {
   curve( muteX, muteY, muteX1, muteY1, muteX2, muteY2, muteWidthDiammeter * 0.25, muteHeightDiammeter * -1.5 );
   curve( muteX9, muteY9, muteX10, muteY10, muteX11, muteY11, muteWidthDiammeter * 0.2, muteHeightDiammeter * -1.25 );
   curve( muteX3, muteY3, muteX4, muteY4, muteX5, muteY5, muteWidthDiammeter * 0.15, muteHeightDiammeter * -0.625 );
-  curve( muteX6, muteY6, muteX7, muteY7, muteX8, muteY8, muteWidthDiammeter * 0.35, muteHeightDiammeter * -1 );                        //fix this next class
+  curve( muteX6, muteY6, muteX7, muteY7, muteX8, muteY8, muteWidthDiammeter * 0.2, muteHeightDiammeter * -1.35 );
+  rect( muteX13, muteY13, buttonSide, buttonSide );
   //
   //Fast Forawrd in the song
   //rect( ffX7, ffY7, buttonSide, buttonSide );
