@@ -15,7 +15,6 @@ Boolean activateWindow=false;
 void setup() {
   size (300, 300);
   loadMusic();
-  musicPlayerButtons();
   //song0.loop(0);
   //soundEffect0.loop(0);
 } //End setup
@@ -33,8 +32,8 @@ void draw() {
 //
 void keyPressed() {
   //
-  //soundEffect0.play();
-  //soundEffect0.rewind();
+  soundEffect0.play();
+  soundEffect0.rewind();
   delay(4000); //millisecconds read from draw() println() debugging
   //println ( "KeyPressed:", soundEffect0.length() );
   //

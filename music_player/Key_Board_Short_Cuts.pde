@@ -18,6 +18,19 @@ void musicShortCuts() {
   if ( key == '8' ) song7.loop(0);
   if ( key == '=' ) soundEffect0.loop(0);
   if ( key == '-' ) soundEffect1.loop(0);
+  //
+  if ( key == 'U' || key=='u' ) autoPlay();
+  if ( key == 'P' || key=='p' ) playPause();
+  if ( key == 'M' || key=='m' ) mute();
+  if ( key == 'S' || key=='s' ) stopSong();
+  if ( key == 'F' || key=='f' ) fastForward();
+  if ( key == 'R' || key=='r' ) fastRewind();
+  if ( key == 'N' || key=='n' ) nextSong();
+  if ( key == 'B' || key=='b' ) previousSong();
+  if ( key == 'L' || key=='l' ) loopSong();
+  if ( key == 'O' || key=='o' ) loopPlaylist();     //entire playlist
+  if ( key == 'W' || key=='w' ) shufflePlaylist();     //shuffle
+  if ( key == 'E' || key=='e' ) loopAndShuffle();     //loop and Shuffle
 }//End musicShortCuts
 //
 void quitButtons() {
@@ -36,5 +49,52 @@ void quitButtonCode() {
   delay(3000); //alternate way of playing sound once
   exit();
 }//End quitButtonCode
+//
+void autoPlay() {
+}//End AutoPlay
+//
+void playPause() {
+}//End PlayPause
+//
+void mute() {
+  //MUTE, not PAUSE, only affects the speakers
+  //ERROR: this MUTE button only works when the song is playing
+  //ERROR: user will spam mute if song is at end of file
+  if ( song0.isMuted() ) {
+    song0.unmute();
+  } else if ( song0.isMuted() && song0.position() >= song0.length()*4/5 ) {
+  song0.rewind();
+  song0.unmute();
+  } else {
+    song0.mute();
+  }
+}//End Mute
+//
+void stopSong() {
+}//End StopSong
+//
+void fastForward() {
+}//End FastForward
+//
+void fastRewind() {
+}//End FastRewind
+//
+void nextSong() {
+}//End NextSong
+//
+void previousSong() {
+}//End previousSong
+//
+void loopSong() {
+}//End loopSong
+//
+void loopPlaylist() {
+}//End loopPlaylist
+//
+void shufflePlaylist() {
+}//End shufflePlaylist
+//
+void loopAndShuffle() {
+}//End loopAndShuffle
 //
 //End Key Board Short Cuts Sub Program
