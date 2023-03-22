@@ -14,7 +14,7 @@ AudioPlayer[] songs = new AudioPlayer[numberOfSongs]; //Play List data structure
 //Pre-array: AudioPlayer soundEffect0, soundEffect1;
 int numberOfSoundEffects = 2;
 AudioPlayer[] soundEffects = new AudioPlayer[numberOfSoundEffects];
-int currentSong = int ( random( numberOfSongs-1 ) );
+int currentSong = int ( random( numberOfSongs-1 ) );   //starts playlist from random song
 //
 int time = 7000;
 //
