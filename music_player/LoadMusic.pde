@@ -15,14 +15,14 @@ void loadMusic() {
   String loveMeFileName = "Love_Me.mp3";
   String soundEffect3FileName = "soundeffect3.wav";
   String soundEffect4FileName = "soundeffect4.wav";
-  song0 = minim.loadFile( musicPathway + tillNoonFileName );
-  song1 = minim.loadFile( musicPathway + runAwayFileName );
-  song2 = minim.loadFile( musicPathway + odysseyFileName );
-  song3 = minim.loadFile( musicPathway + gardenFileName );
-  song4 = minim.loadFile( musicPathway + luckyCharmFileName );
-  song5 = minim.loadFile( musicPathway + timeFileName );
-  song6 = minim.loadFile( musicPathway + fallingFileName );
-  song7 = minim.loadFile( musicPathway + loveMeFileName );
-  soundEffect0 = minim.loadFile( soundEffectPathway + soundEffect3FileName );
-  soundEffect1 = minim.loadFile( soundEffectPathway + soundEffect4FileName );
+  songs[0] = minim.loadFile( musicPathway + tillNoonFileName );
+  songs[1] = minim.loadFile( musicPathway + runAwayFileName );
+  songs[2] = minim.loadFile( musicPathway + odysseyFileName );
+  songs[3] = minim.loadFile( musicPathway + gardenFileName );
+  songs[4] = minim.loadFile( musicPathway + luckyCharmFileName );
+  songs[5] = minim.loadFile( musicPathway + timeFileName );
+  songs[6] = minim.loadFile( musicPathway + fallingFileName );
+  songs[7] = minim.loadFile( musicPathway + loveMeFileName );
+  soundEffects[0] = minim.loadFile( soundEffectPathway + soundEffect3FileName );
+  soundEffects[1] = minim.loadFile( soundEffectPathway + soundEffect4FileName );
 }//End loadMusic
