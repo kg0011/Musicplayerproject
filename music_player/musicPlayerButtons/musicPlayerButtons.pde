@@ -109,16 +109,16 @@ void setup() {
   muteX6 = muteX12 - buttonReferenceMeasure * 0;
   muteY6 = muteY12 - buttonReferenceMeasure * 0;
   muteX7 = muteX12 - buttonReferenceMeasure * -0.6;
-  muteY7 = muteY12 - buttonReferenceMeasure * -0.85;
+  muteY7 = muteY12 - buttonReferenceMeasure * -0.95;
   muteX8 = muteX12 - buttonReferenceMeasure * -0.6;
-  muteY8 = muteY12 - buttonReferenceMeasure * -0.2;          //speaker shape thing left side
+  muteY8 = muteY12 - buttonReferenceMeasure * -0.05;          //speaker shape thing left side
   
   muteX14 = muteX12 - buttonReferenceMeasure * 0;
   muteY14 = muteY12 - buttonReferenceMeasure * 0;
-  muteX15 = muteX12 - buttonReferenceMeasure * -0.635;
+  muteX15 = muteX12 - buttonReferenceMeasure * -0.615;
   muteY15 = muteY12 - buttonReferenceMeasure * -0.85;
-  muteX16 = muteX12 - buttonReferenceMeasure * -0.635;
-  muteY16 = muteY12 - buttonReferenceMeasure * -0.2;          //speaker shape thing right side
+  muteX16 = muteX12 - buttonReferenceMeasure * -0.615;
+  muteY16 = muteY12 - buttonReferenceMeasure * -0.15;          //speaker shape thing right side
   
   muteX9 = muteX12 - buttonReferenceMeasure * 0;
   muteY9 = muteY12 - buttonReferenceMeasure * 0;
@@ -166,9 +166,9 @@ void draw() {
   curve( muteX, muteY, muteX1, muteY1, muteX2, muteY2, muteWidthDiammeter * 0.25, muteHeightDiammeter * -1.5 );           //first of three lines
   curve( muteX9, muteY9, muteX10, muteY10, muteX11, muteY11, muteWidthDiammeter * 0.2, muteHeightDiammeter * -1.25 );     //second of three lines
   curve( muteX3, muteY3, muteX4, muteY4, muteX5, muteY5, muteWidthDiammeter * 0.15, muteHeightDiammeter * -0.625 );       //third of three lines
-  curve( muteX6, muteY6, muteX7, muteY7, muteX8, muteY8, muteWidthDiammeter * 0.2, muteHeightDiammeter * -1.2 );          //speaker shape thing left side
-  curve( muteX14, muteY14, muteX15, muteY15, muteX16, muteY16, muteWidthDiammeter * -0.25, muteHeightDiammeter * -0.5 );  //speaker shape thing right side
-  rect( muteX13, muteY13, buttonSide * 0.02, buttonSide * 0.9 );                                                          //speaker shape thing seperate line
+  curve( muteX6, muteY6, muteX7, muteY7, muteX8, muteY8, muteWidthDiammeter * 0.25, muteHeightDiammeter * -2 );          //speaker shape thing left side
+  curve( muteX14, muteY14, muteX15, muteY15, muteX16, muteY16, muteWidthDiammeter * -0.25, muteHeightDiammeter * -0.65 );  //speaker shape thing right side
+  rect( muteX13, muteY13, buttonSide * 0.0075, buttonSide * 0.9 );                                                          //speaker shape thing seperate line
   //
   //Fast Forawrd in the song
   //rect( ffX7, ffY7, buttonSide, buttonSide );
