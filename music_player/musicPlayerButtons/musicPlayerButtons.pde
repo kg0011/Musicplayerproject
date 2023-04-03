@@ -239,10 +239,10 @@ void draw() {
   triangle( loopInfX1, loopInfY1, loopInfX2, loopInfY2, loopInfX3, loopInfY3 );
   //
   //Loop the Playlist (infinitly)
-  //Student to develop
-  //ellipse( X, Y, WidthDiammeter, HeightDiammeter ); //Layout
-  //ellipse( X, Y, WidthDiammeter, HeightDiammeter );
-  //triangle( X1, Y1, X2, Y2, X3, Y3 );
+  //rect( loopPLX, loopPLY, buttonSide, buttonSide );
+  //ellipse( loopPLX1, loopPLY2, loopPLWidthDiammeter, loopPLHeightDiammeter ); //Layout
+  //ellipse( loopPLX2, loopPLY2, loopPLWidthDiammeter, loopPLHeightDiammeter );
+  //triangle( loopPLX3, loopPLY3, loopPLX4, loopPLY4, loopPLX5, loopPLY5 );
   //
 } //End draw
   //
