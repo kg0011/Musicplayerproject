@@ -11,6 +11,7 @@ float nextX, nextY, nextX1, nextY1, nextX2, nextY2, nextX3, nextY3, nextX4, next
 float prevX, prevY, prevX1, prevY1, prevX2, prevY2, prevX3, prevY3, prevX4, prevY4;
 float loopX, loopY, loopX1, loopY1, loopX2, loopY2, loopX3, loopY3, loopX4, loopY4, loopX5, loopY5, loopWidthDiammeter, loopHeightDiammeter;
 float loopInfX, loopInfY, loopInfX1, loopInfY1, loopInfX2, loopInfY2, loopInfX3, loopInfY3, loopInfX4, loopInfY4, loopInfX5, loopInfY5, loopInfWidthDiammeter, loopInfHeightDiammeter;
+float loopPLX, loopPLY, loopPLX1, loopPLY1, loopPLX2, loopPLY2, loopPLX3, loopPLY3, loopPLX4, loopPLY4, loopPLX5, loopPLY5, loopPLWidthDiammeter, loopPLHeightDiammeter;
 //float loopPlaylist
 //
 void setup() {
@@ -139,11 +140,11 @@ void setup() {
   //
   loopX = pauseX - buttonReferenceMeasure * 0.175;
   loopY = pauseY - buttonReferenceMeasure * -1.5;
-  loopX1 = pauseX - buttonReferenceMeasure * -0.75;
+  loopX1 = pauseX - buttonReferenceMeasure * -0.8;
   loopY1 = pauseY - buttonReferenceMeasure * -2;
-  loopX2 = pauseX - buttonReferenceMeasure * -0.25;
+  loopX2 = pauseX - buttonReferenceMeasure * -0.3;
   loopY2 = pauseY - buttonReferenceMeasure * -2.25;
-  loopX3 = pauseX - buttonReferenceMeasure * -0.25;
+  loopX3 = pauseX - buttonReferenceMeasure * -0.3;
   loopY3 = pauseY - buttonReferenceMeasure * -1.75;
   loopX4 = pauseX - buttonReferenceMeasure * -0.5;
   loopY4 = pauseY - buttonReferenceMeasure * -2;
@@ -154,29 +155,42 @@ void setup() {
   //
   loopInfX = pauseX - buttonReferenceMeasure * 2;
   loopInfY = pauseY - buttonReferenceMeasure * -1.5;
-  loopInfX1 = pauseX - buttonReferenceMeasure * 0;                          //fix loops
-  loopInfY1 = pauseY - buttonReferenceMeasure * 0;
-  loopInfX2 = pauseX - buttonReferenceMeasure * 0;
-  loopInfY2 = pauseY - buttonReferenceMeasure * 0;
-  loopInfX3 = pauseX - buttonReferenceMeasure * 0;
-  loopInfY3 = pauseY - buttonReferenceMeasure * 0;
-  loopInfX4 = pauseX - buttonReferenceMeasure * 0;
-  loopInfY4 = pauseY - buttonReferenceMeasure * 0;
-  loopInfX5 = pauseX - buttonReferenceMeasure * 0;
-  loopInfY5 = pauseY - buttonReferenceMeasure * 0;
+  loopInfX1 = pauseX - buttonReferenceMeasure * 1;
+  loopInfY1 = pauseY - buttonReferenceMeasure * -2;
+  loopInfX2 = pauseX - buttonReferenceMeasure * 1.5;
+  loopInfY2 = pauseY - buttonReferenceMeasure * -2.25;
+  loopInfX3 = pauseX - buttonReferenceMeasure * 1.5;
+  loopInfY3 = pauseY - buttonReferenceMeasure * -1.75;
+  loopInfX4 = pauseX - buttonReferenceMeasure * 1.325;
+  loopInfY4 = pauseY - buttonReferenceMeasure * -2;
+  loopInfX5 = pauseX - buttonReferenceMeasure * 1.325;
+  loopInfY5 = pauseY - buttonReferenceMeasure * -2;
   loopInfWidthDiammeter = pauseX - buttonReferenceMeasure * 0;
-  loopInfHeightDiammeter = pauseY - buttonReferenceMeasure * 0;
+  loopInfHeightDiammeter = pauseY - buttonReferenceMeasure * 0;                          //Make this look different than loop once
   //
-  
+  loopPLX = pauseX - buttonReferenceMeasure * -1.65;
+  loopPLY = pauseY - buttonReferenceMeasure * -1.5;
+  loopPLX1 = pauseX - buttonReferenceMeasure * -2.325;
+  loopPLY1 = pauseY - buttonReferenceMeasure * -2;
+  loopPLX2 = pauseX - buttonReferenceMeasure * -2.325;
+  loopPLY2 = pauseY - buttonReferenceMeasure * -2;
+  loopPLX3 = pauseX - buttonReferenceMeasure * -2.65;
+  loopPLY3 = pauseY - buttonReferenceMeasure * -2;
+  loopPLX4 = pauseX - buttonReferenceMeasure * -2.15;
+  loopPLY4 = pauseY - buttonReferenceMeasure * -2.25;
+  loopPLX5 = pauseX - buttonReferenceMeasure * -2.15;
+  loopPLY5 = pauseY - buttonReferenceMeasure * -1.75;
+  loopPLWidthDiammeter = pauseX - buttonReferenceMeasure * 0;
+  loopPLHeightDiammeter = pauseY - buttonReferenceMeasure * 0;
   //
 } //End setup
 //
 void draw() {
   //
   /*Note: draw the pause button first, in the middle
-  All other buttons are drawn around it
-  All pseudocode starts like rect( X, Y, Width, Height )
-  */
+   All other buttons are drawn around it
+   All pseudocode starts like rect( X, Y, Width, Height )
+   */
   //
   //Confirming Local Variable Center X & Y garbage collected from setup()
   //print("Confirming Center X;", centerX);
@@ -239,15 +253,17 @@ void draw() {
   triangle( loopInfX1, loopInfY1, loopInfX2, loopInfY2, loopInfX3, loopInfY3 );
   //
   //Loop the Playlist (infinitly)
-  //rect( loopPLX, loopPLY, buttonSide, buttonSide );
-  //ellipse( loopPLX1, loopPLY2, loopPLWidthDiammeter, loopPLHeightDiammeter ); //Layout
-  //ellipse( loopPLX2, loopPLY2, loopPLWidthDiammeter, loopPLHeightDiammeter );
-  //triangle( loopPLX3, loopPLY3, loopPLX4, loopPLY4, loopPLX5, loopPLY5 );
+  rect( loopPLX, loopPLY, buttonSide * 1.35, buttonSide );
+  ellipse( loopPLX1, loopPLY1, loopPLWidthDiammeter * 0.25, loopPLHeightDiammeter * 0.25 ); //Layout
+  ellipse( loopPLX2, loopPLY2, loopPLWidthDiammeter * 0.225, loopPLHeightDiammeter * 0.215 );
+  triangle( loopPLX3, loopPLY3, loopPLX4, loopPLY4, loopPLX5, loopPLY5 );
   //
 } //End draw
-  //
-  void keyPressed() {} //End keyPressed
-  //
-  void mousePressed() {} //End mousePressed
-  //
-  //End MAIN Program
+//
+void keyPressed() {
+} //End keyPressed
+//
+void mousePressed() {
+} //End mousePressed
+//
+//End MAIN Program
