@@ -203,9 +203,9 @@ void draw() {
   rect( stopX, stopY, buttonSide, buttonSide ); //Layout
   //
   //Pause Button
-  rect( pauseX1, pauseY1, buttonSide, buttonSide );
-  //rect( pauseX, pauseY, buttonSide * 0.3, buttonSide ); //Layout
-  //rect( pauseX2, pauseY2, buttonSide * 0.3, buttonSide );
+  //rect( pauseX1, pauseY1, buttonSide, buttonSide );
+  rect( pauseX, pauseY, buttonSide * 0.3, buttonSide ); //Layout
+  rect( pauseX2, pauseY2, buttonSide * 0.3, buttonSide );
   //
   //Play Button
   //rect( playX3, playY3, buttonSide, buttonSide );
@@ -241,19 +241,19 @@ void draw() {
   triangle( prevX1, prevY1, prevX2, prevY2, prevX3, prevY3 );
   //
   //Loop the song once
-  rect( loopX, loopY, buttonSide * 1.35, buttonSide );
+  //rect( loopX, loopY, buttonSide * 1.35, buttonSide );
   ellipse( loopX4, loopY4, loopWidthDiammeter * 0.25, loopHeightDiammeter * 0.25 ); //Layout
   ellipse( loopX5, loopY5, loopWidthDiammeter * 0.225, loopHeightDiammeter * 0.215 );
   triangle( loopX1, loopY1, loopX2, loopY2, loopX3, loopY3 );
   //
   //Loop the song infinitly
-  rect( loopInfX, loopInfY, buttonSide * 1.35, buttonSide );
+  //rect( loopInfX, loopInfY, buttonSide * 1.35, buttonSide );
   ellipse( loopInfX5, loopInfY5, loopInfWidthDiammeter * 0.25, loopInfHeightDiammeter * 0.25 ); //Layout
   ellipse( loopInfX4, loopInfY4, loopInfWidthDiammeter * 0.225, loopInfHeightDiammeter * 0.215 );
   triangle( loopInfX1, loopInfY1, loopInfX2, loopInfY2, loopInfX3, loopInfY3 );
   //
   //Loop the Playlist (infinitly)
-  rect( loopPLX, loopPLY, buttonSide * 1.35, buttonSide );
+  //rect( loopPLX, loopPLY, buttonSide * 1.35, buttonSide );
   ellipse( loopPLX1, loopPLY1, loopPLWidthDiammeter * 0.25, loopPLHeightDiammeter * 0.25 ); //Layout
   ellipse( loopPLX2, loopPLY2, loopPLWidthDiammeter * 0.225, loopPLHeightDiammeter * 0.215 );
   triangle( loopPLX3, loopPLY3, loopPLX4, loopPLY4, loopPLX5, loopPLY5 );
