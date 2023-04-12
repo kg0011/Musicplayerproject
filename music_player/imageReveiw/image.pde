@@ -22,7 +22,7 @@ String upFolder = "..";
 String openFolder = "/";
 String folder1 = "ImagesUsed";
 String folder2 = "Landscape and Square Images";
-pathway = upFolder + openFolder + upFolder + openFolder + folder1 + openFolder + folder2 + openFolder;
+pathway = folder1 + openFolder + folder2 + openFolder;
 fileName = "Screenshot_20230316-135254_Gallery.jpg";
 pic = loadImage( pathway + fileName );
 //
