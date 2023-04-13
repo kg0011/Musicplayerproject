@@ -7,7 +7,9 @@ float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageH
 PImage pic;
 String pathway, fileName;
 Boolean nightMode=true;
-float picWidthAdjusted=0.0, picHeightAdjusted=0.0; //IF requires previous value, not Null
+float picX_Adjusted = 0.0, picY_Adjusted = 0.0, picWidthAdjusted=0.0, picHeightAdjusted=0.0; //IF requires previous value, not Null
+float whiteSpace=0.0;
+Boolean imageCenter=false, imageRightBottom=true; //Developer level image justification
 //
 size(500, 100); //Landscape
 appWidth = width;
@@ -33,12 +35,27 @@ int picHeight = 1409; //Original Dimension,
 //Larger dimension algorithm, aspect ratio
 int smallerDimension, largerDimension;
 float imageHeightRatio, imageWidthRatio;
-if ( picWidth >= picHeight ) { //True if landscape or square
+if ( picHeight >= picWidth ) { //True if landscape or square
   largerDimension = picHeight;
   smallerDimension = picWidth;
   imageHeightRatio = float (largerDimension) / float (smallerDimension); //Ratio <1, fized by casting
   picWidthAdjusted = backgroundImageWidth; //Compression into rect()
   picHeightAdjusted = picWidthAdjusted * imageHeightRatio; //Calculated variable from compressed variable
+  //If image fits, no changes are needed
+  picX_Adjusted = backgroundImageX;
+  picY_Adjusted = backgroundImageY;
+  //Justify Image
+  whiteSpace = backgroundImageHeight - picHeightAdjusted;
+  if ( imageCenter==true ) picX_Adjusted = backgroundImageY + whiteSpace*1/2;
+  if ( imageRightBottom==true ) picX_Adjusted = backgroundImageY + whiteSpace;
+  //
+  if ( picHeightAdjusted > backgroundImageHeight ) {   //error catch: adjusted height is bigger than rect()
+    picHeightAdjusted = backgroundImageHeight; //Uses automatic compression algorithm
+    picWidthAdjusted = picWidthAdjusted * imageHeightRatio; //New calculated value
+    whiteSpace = backgroundImageWidth - picWidthAdjusted;
+    if ( imageCenter==true ) picX_Adjusted = backgroundImageX + whiteSpace*1/2;
+    if ( imageRightBottom==true ) picX_Adjusted = backgroundImageX + whiteSpace;
+  }
 } else { //False if portrait
   /*students to finish
   largerDimension = ;
@@ -57,7 +74,7 @@ if ( nightMode==true ) tint(64, 64, 40); //Night Mode, less blue
 //No Aspect ratio
 //image( pic, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
 println ( picWidthAdjusted, picHeightAdjusted ); //View Juman Error on variables, zero values
-image( pic, backgroundImageX, backgroundImageY, picWidthAdjusted, picHeightAdjusted );
+image( pic, picX_Adjusted, picY_Adjusted, picWidthAdjusted, picHeightAdjusted );
 //Has Aspect Ratio
 //
 //End Main Program
