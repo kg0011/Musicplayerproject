@@ -21,14 +21,15 @@ int time = 7000;
 Boolean activateWindow=false;
 //
 void setup() {
-  size (300, 300);
+  size(1200, 700); //width, height
+  //fullScreen(); //displaywidth, displayheight
   loadMusic();
+  musicPlayerButtons();
   //songs[0].loop(0);
   //soundEffects[0].loop(0);
 } //End setup
 //
 void draw() {
-  if ( activateWindow == true ) background(0);
   //
   //Debugging the Effective Length of the Sound Effect to code a delay
   //println ( soundEffects[0].position(), soundEffects[0].length() );
@@ -36,8 +37,7 @@ void draw() {
   //Debugging a sound to shorten a file play
   println( soundEffects[0].position(), soundEffects[0].length() );
   //
-} //End draw
-//
+  } //End draw
 void keyPressed() {
   //
   soundEffects[0].play();

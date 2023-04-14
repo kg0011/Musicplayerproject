@@ -35,7 +35,7 @@ int picHeight = 1409; //Original Dimension,
 //Larger dimension algorithm, aspect ratio
 int smallerDimension, largerDimension;
 float imageHeightRatio, imageWidthRatio;
-if ( picHeight >= picWidth ) { //True if landscape or square
+if ( picWidth >= picHeight ) { //True if landscape or square
   largerDimension = picHeight;
   smallerDimension = picWidth;
   imageHeightRatio = float (largerDimension) / float (smallerDimension); //Ratio <1, fized by casting
@@ -57,20 +57,18 @@ if ( picHeight >= picWidth ) { //True if landscape or square
     if ( imageRightBottom==true ) picX_Adjusted = backgroundImageX + whiteSpace;
   }
 } else { //False if portrait
-  /*students to finish
-  largerDimension = ;
-  smallerDimension = ;
-  imageWidthRatio = ;
-  picWidthAdjusted = ;
-  picHeightAdjusted = ;
-  */
+  largerDimension = picHeight;
+  smallerDimension = picWidth;
+  imageWidthRatio = picHeight*1/2;
+  picWidthAdjusted = backgroundImageWidth;
+  picHeightAdjusted = backgroundImageHeight;
 }
 //
 //Rectangle Layout and Image drawing to CANVAS
 //rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
 //
 if ( nightMode==false ) tint(255, 128); //Day mode, gray scale, using half white (128/255=1/2)  *remember that computers count 0 as a number
-if ( nightMode==true ) tint(64, 64, 40); //Night Mode, less blue
+if ( nightMode==true ) tint(255, 255, 255); //Night Mode, less blue                                                                                   ***change back to night mode so mercer doesn't get mad >:(***
 //No Aspect ratio
 //image( pic, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
 println ( picWidthAdjusted, picHeightAdjusted ); //View Juman Error on variables, zero values

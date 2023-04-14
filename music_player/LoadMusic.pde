@@ -25,4 +25,4 @@ void loadMusic() {
   songs[7] = minim.loadFile( musicPathway + loveMeFileName );
   soundEffects[0] = minim.loadFile( soundEffectPathway + soundEffect3FileName );
   soundEffects[1] = minim.loadFile( soundEffectPathway + soundEffect4FileName );
-}//End loadMusic
+} //End loadMusic
