@@ -18,11 +18,10 @@ int currentSong = int ( random( numberOfSongs-1 ) );   //starts playlist from ra
 //
 int time = 7000;
 //
-Boolean activateWindow=false;
-//
 void setup() {
   size(1200, 700); //width, height
   //fullScreen(); //displaywidth, displayheight
+  background(0);
   loadMusic();
   //songs[0].loop(0);
   //soundEffects[0].loop(0);
@@ -30,26 +29,31 @@ void setup() {
 //
 void draw() {
 //Global Variables for draw
-float buttonReferenceMeasure;
-float buttonSide, spaceWidth, spaceHeight;
-float pauseX, pauseY, pauseX1, pauseY1, pauseX2, pauseY2;
-float stopX, stopY, stopX1, stopY1, stopX2, stopY2, stopWidth, stopHeight;
-float playX, playY, playX1, playY1, playX2, playY2, playX3, playY3;
-float muteX, muteY, muteX1, muteY1, muteX2, muteY2, muteX3, muteY3; 
-float muteX4, muteY4, muteX5, muteY5, muteX6, muteY6; 
-float muteX7, muteY7, muteX8, muteY8, muteX9, muteY9; 
-float muteX10, muteY10, muteX11, muteY11, muteX12, muteY12; 
-float muteX13, muteY13, muteY14, muteX14, muteY15, muteX15;
-float muteY16, muteX16, muteWidthDiammeter, muteHeightDiammeter;
-float ffX1, ffY1, ffX2, ffY2, ffX3, ffY3, ffX4, ffY4, ffX5, ffY5, ffX6, ffY6, ffX7, ffY7;
-float rvrX1, rvrY1, rvrX2, rvrY2, rvrX3, rvrY3, rvrX4, rvrY4, rvrX5, rvrY5, rvrX6, rvrY6, rvrX7, rvrY7;
-float nextX, nextY, nextX1, nextY1, nextX2, nextY2, nextX3, nextY3, nextX4, nextY4;
-float prevX, prevY, prevX1, prevY1, prevX2, prevY2, prevX3, prevY3, prevX4, prevY4;
-float loopX, loopY, loopX1, loopY1, loopX2, loopY2, loopX3, loopY3, loopX4, loopY4, loopX5, loopY5, loopWidthDiammeter, loopHeightDiammeter;
-float loopInfX, loopInfY, loopInfX1, loopInfY1, loopInfX2, loopInfY2, loopInfX3, loopInfY3, loopInfX4, loopInfY4, loopInfX5, loopInfY5, loopInfWidthDiammeter, loopInfHeightDiammeter;
-float loopPLX, loopPLY, loopPLX1, loopPLY1, loopPLX2, loopPLY2, loopPLX3, loopPLY3, loopPLX4, loopPLY4, loopPLX5, loopPLY5, loopPLWidthDiammeter, loopPLHeightDiammeter;
-//float loopPlaylist
-//
+  float buttonReferenceMeasure;
+  float buttonSide, spaceWidth, spaceHeight;
+  float pauseX, pauseY, pauseX1, pauseY1, pauseX2, pauseY2;
+  float stopX, stopY, stopX1, stopY1, stopX2, stopY2, stopWidth, stopHeight;
+  float playX, playY, playX1, playY1, playX2, playY2, playX3, playY3;
+  float muteX, muteY, muteX1, muteY1, muteX2, muteY2, muteX3, muteY3;
+  float muteX4, muteY4, muteX5, muteY5, muteX6, muteY6;
+  float muteX7, muteY7, muteX8, muteY8, muteX9, muteY9;
+  float muteX10, muteY10;
+  float muteX11, muteY11;
+  float muteX12, muteY12;
+  float muteX13, muteY13, muteY14, muteX14, muteY15, muteX15;
+  float muteY16, muteX16, muteWidthDiammeter, muteHeightDiammeter;
+  float ffX1, ffY1, ffX2, ffY2, ffX3, ffY3;
+  float ffX4, ffY4, ffX5, ffY5, ffX6, ffY6, ffX7, ffY7;
+  float rvrX1, rvrY1, rvrX2, rvrY2, rvrX3;
+  float rvrY3, rvrX4, rvrY4, rvrX5, rvrY5, rvrX6, rvrY6, rvrX7, rvrY7;
+  float nextX, nextY, nextX1, nextY1, nextX2, nextY2, nextX3, nextY3, nextX4, nextY4;
+  float prevX, prevY, prevX1, prevY1, prevX2, prevY2, prevX3, prevY3, prevX4, prevY4;
+  float loopX, loopY, loopX1, loopY1, loopX2, loopY2, loopX3, loopY3;
+  float loopX4, loopY4, loopX5, loopY5, loopWidthDiammeter, loopHeightDiammeter;
+  float loopInfX, loopInfY, loopInfX1, loopInfY1, loopInfX2, loopInfY2, loopInfX3, loopInfY3;
+  float loopInfX4, loopInfY4, loopInfX5, loopInfY5, loopInfWidthDiammeter, loopInfHeightDiammeter;
+  float loopPLX, loopPLY, loopPLX1, loopPLY1, loopPLX2, loopPLY2, loopPLX3, loopPLY3;
+  //
   //Population: visual data
   buttonReferenceMeasure = width * 1/12;
   buttonSide = buttonReferenceMeasure;
@@ -69,7 +73,7 @@ float loopPLX, loopPLY, loopPLX1, loopPLY1, loopPLX2, loopPLY2, loopPLX3, loopPL
   pauseY2 = centerY - buttonReferenceMeasure * 0.5;
   //
   stopX = pauseX - buttonReferenceMeasure * 0;
-  stopY = pauseY - buttonReferenceMeasure * 1.5;
+  stopY = pauseY - buttonReferenceMeasure * -1.5;
   //
   playX = pauseX - buttonReferenceMeasure * 0;
   playY = pauseY - buttonReferenceMeasure * -1;
@@ -132,60 +136,60 @@ float loopPLX, loopPLY, loopPLX1, loopPLY1, loopPLX2, loopPLY2, loopPLX3, loopPL
   prevX4 = pauseX - buttonReferenceMeasure * 3;
   prevY4 = pauseY - buttonReferenceMeasure * 0;
   //
-  muteX = muteX12 - buttonReferenceMeasure * 0;
-  muteY = muteY12 - buttonReferenceMeasure * 0;
-  muteX1 = muteX12 - buttonReferenceMeasure * -0.25;
-  muteY1 = muteY12 - buttonReferenceMeasure * -1;
-  muteX2 = muteX12 - buttonReferenceMeasure * -0.25;
-  muteY2 = muteY12 - buttonReferenceMeasure * 0;              //first of three lines
+  muteX = pauseX - buttonReferenceMeasure * 4;
+  muteY = pauseY - buttonReferenceMeasure * 1;
+  muteX1 = pauseX - buttonReferenceMeasure * 5.25;
+  muteY1 = pauseY - buttonReferenceMeasure * 2;
+  muteX2 = pauseX - buttonReferenceMeasure * 5.25;
+  muteY2 = pauseY - buttonReferenceMeasure * 3;              //first of three lines
   //
-  muteX3 = muteX12 - buttonReferenceMeasure * 0;
-  muteY3 = muteY12 - buttonReferenceMeasure * 0;
-  muteX4 = muteX12 - buttonReferenceMeasure * -0.45;
-  muteY4 = muteY12 - buttonReferenceMeasure * -0.7;
-  muteX5 = muteX12 - buttonReferenceMeasure * -0.45;
-  muteY5 = muteY12 - buttonReferenceMeasure * -0.3;             //third of three lines
+  muteX3 = pauseX - buttonReferenceMeasure * 0;
+  muteY3 = pauseY - buttonReferenceMeasure * 0;
+  muteX4 = pauseX - buttonReferenceMeasure * -0.45;
+  muteY4 = pauseY - buttonReferenceMeasure * -0.7;
+  muteX5 = pauseX - buttonReferenceMeasure * -0.45;
+  muteY5 = pauseY - buttonReferenceMeasure * -0.3;             //third of three lines
   //
-  muteX6 = muteX12 - buttonReferenceMeasure * 0;
-  muteY6 = muteY12 - buttonReferenceMeasure * 0;
-  muteX7 = muteX12 - buttonReferenceMeasure * -0.6;
-  muteY7 = muteY12 - buttonReferenceMeasure * -0.95;
-  muteX8 = muteX12 - buttonReferenceMeasure * -0.6;
-  muteY8 = muteY12 - buttonReferenceMeasure * -0.05;          //speaker shape thing left side
+  muteX6 = pauseX - buttonReferenceMeasure * 0;
+  muteY6 = pauseY - buttonReferenceMeasure * 0;
+  muteX7 = pauseX - buttonReferenceMeasure * -0.6;
+  muteY7 = pauseY - buttonReferenceMeasure * -0.95;
+  muteX8 = pauseX - buttonReferenceMeasure * -0.6;
+  muteY8 = pauseY - buttonReferenceMeasure * -0.05;          //speaker shape thing left side
   //
-  muteX14 = muteX12 - buttonReferenceMeasure * 0;
-  muteY14 = muteY12 - buttonReferenceMeasure * 0;
-  muteX15 = muteX12 - buttonReferenceMeasure * -0.615;
-  muteY15 = muteY12 - buttonReferenceMeasure * -0.85;
-  muteX16 = muteX12 - buttonReferenceMeasure * -0.615;
-  muteY16 = muteY12 - buttonReferenceMeasure * -0.15;          //speaker shape thing right side
+  muteX14 = pauseX - buttonReferenceMeasure * 0;
+  muteY14 = pauseY - buttonReferenceMeasure * 0;
+  muteX15 = pauseX - buttonReferenceMeasure * -0.615;
+  muteY15 = pauseY - buttonReferenceMeasure * -0.85;
+  muteX16 = pauseX - buttonReferenceMeasure * -0.615;
+  muteY16 = pauseY - buttonReferenceMeasure * -0.15;          //speaker shape thing right side
   //
-  muteX9 = muteX12 - buttonReferenceMeasure * 0;
-  muteY9 = muteY12 - buttonReferenceMeasure * 0;
-  muteX10 = muteX12 - buttonReferenceMeasure * -0.35;
-  muteY10 = muteY12 - buttonReferenceMeasure * -0.85;
-  muteX11 = muteX12 - buttonReferenceMeasure * -0.35;
-  muteY11 = muteY12 - buttonReferenceMeasure * -0.15;      //second of three lines
+  muteX9 = pauseX - buttonReferenceMeasure * 0;
+  muteY9 = pauseY - buttonReferenceMeasure * 0;
+  muteX10 = pauseX - buttonReferenceMeasure * -0.15;
+  muteY10 = pauseY - buttonReferenceMeasure * -0.85;
+  muteX11 = pauseX - buttonReferenceMeasure * -0.35;
+  muteY11 = pauseY - buttonReferenceMeasure * -0.15;      //second of three lines
   //
-  muteX12 = centerX - buttonReferenceMeasure * 5.5;
-  muteY12 = centerY - buttonReferenceMeasure * 3;
+  muteX12 = centerX - buttonReferenceMeasure * 6;
+  muteY12 = centerY - buttonReferenceMeasure * 3.5;
   muteX13 = centerX - buttonReferenceMeasure * 4.9;
   muteY13 = centerY - buttonReferenceMeasure * 2.95;       //speaker shape thing seperate line
   //
   muteWidthDiammeter = pauseX - buttonReferenceMeasure * -5;
   muteHeightDiammeter = pauseY - buttonReferenceMeasure * 1.75;     //seccond of three lines
   //
-  loopX = pauseX - buttonReferenceMeasure * 0.175;
+  loopX = pauseX - buttonReferenceMeasure * -1.65;
   loopY = pauseY - buttonReferenceMeasure * -1.5;
-  loopX1 = pauseX - buttonReferenceMeasure * -0.8;
+  loopX1 = pauseX - buttonReferenceMeasure * -2.65;
   loopY1 = pauseY - buttonReferenceMeasure * -2;
-  loopX2 = pauseX - buttonReferenceMeasure * -0.3;
+  loopX2 = pauseX - buttonReferenceMeasure * -2.15;
   loopY2 = pauseY - buttonReferenceMeasure * -2.25;
-  loopX3 = pauseX - buttonReferenceMeasure * -0.3;
+  loopX3 = pauseX - buttonReferenceMeasure * -2.15;
   loopY3 = pauseY - buttonReferenceMeasure * -1.75;
-  loopX4 = pauseX - buttonReferenceMeasure * -0.5;
+  loopX4 = pauseX - buttonReferenceMeasure * -2.325;
   loopY4 = pauseY - buttonReferenceMeasure * -2;
-  loopX5 = pauseX - buttonReferenceMeasure * -0.5;
+  loopX5 = pauseX - buttonReferenceMeasure * -2.325;
   loopY5 = pauseY - buttonReferenceMeasure * -2;
   loopWidthDiammeter = pauseX - buttonReferenceMeasure * 0;
   loopHeightDiammeter = pauseY - buttonReferenceMeasure * 0;
@@ -204,21 +208,6 @@ float loopPLX, loopPLY, loopPLX1, loopPLY1, loopPLX2, loopPLY2, loopPLX3, loopPL
   loopInfY5 = pauseY - buttonReferenceMeasure * -2;
   loopInfWidthDiammeter = pauseX - buttonReferenceMeasure * 0;
   loopInfHeightDiammeter = pauseY - buttonReferenceMeasure * 0;                          //Make this look different than loop once
-  //
-  loopPLX = pauseX - buttonReferenceMeasure * -1.65;
-  loopPLY = pauseY - buttonReferenceMeasure * -1.5;
-  loopPLX1 = pauseX - buttonReferenceMeasure * -2.325;
-  loopPLY1 = pauseY - buttonReferenceMeasure * -2;
-  loopPLX2 = pauseX - buttonReferenceMeasure * -2.325;
-  loopPLY2 = pauseY - buttonReferenceMeasure * -2;
-  loopPLX3 = pauseX - buttonReferenceMeasure * -2.65;
-  loopPLY3 = pauseY - buttonReferenceMeasure * -2;
-  loopPLX4 = pauseX - buttonReferenceMeasure * -2.15;
-  loopPLY4 = pauseY - buttonReferenceMeasure * -2.25;
-  loopPLX5 = pauseX - buttonReferenceMeasure * -2.15;
-  loopPLY5 = pauseY - buttonReferenceMeasure * -1.75;
-  loopPLWidthDiammeter = pauseX - buttonReferenceMeasure * 0;
-  loopPLHeightDiammeter = pauseY - buttonReferenceMeasure * 0;
   //
   //Button Space
   //rect( spaceX, spaceY, spaceWidth, spaceHeight );
@@ -276,18 +265,13 @@ float loopPLX, loopPLY, loopPLX1, loopPLY1, loopPLX2, loopPLY2, loopPLX3, loopPL
   ellipse( loopInfX4, loopInfY4, loopInfWidthDiammeter * 0.225, loopInfHeightDiammeter * 0.215 );
   triangle( loopInfX1, loopInfY1, loopInfX2, loopInfY2, loopInfX3, loopInfY3 );
   //
-  //Loop the Playlist (infinitly)
-  //rect( loopPLX, loopPLY, buttonSide * 1.35, buttonSide );
-  ellipse( loopPLX1, loopPLY1, loopPLWidthDiammeter * 0.25, loopPLHeightDiammeter * 0.25 ); //Layout
-  ellipse( loopPLX2, loopPLY2, loopPLWidthDiammeter * 0.225, loopPLHeightDiammeter * 0.215 );
-  triangle( loopPLX3, loopPLY3, loopPLX4, loopPLY4, loopPLX5, loopPLY5 );
   //Debugging the Effective Length of the Sound Effect to code a delay
   //println ( soundEffects[0].position(), soundEffects[0].length() );
   //println ("When does the sound stop? Indicates delay");
   //Debugging a sound to shorten a file play
   println( soundEffects[0].position(), soundEffects[0].length() );
   //
-  } //End draw
+} //End draw
 void keyPressed() {
   //
   soundEffects[0].play();
@@ -300,7 +284,6 @@ void keyPressed() {
 } //End keyPressed
 //
 void mousePressed() {
-  if ( activateWindow==false ) activateWindow = true;
 } // End mousePressed
 //
 //End MAIN Program
