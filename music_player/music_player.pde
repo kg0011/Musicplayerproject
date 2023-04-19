@@ -137,25 +137,25 @@ void draw() {
   prevY4 = pauseY - buttonReferenceMeasure * 0;
   //
   muteX = pauseX - buttonReferenceMeasure * 4;
-  muteY = pauseY - buttonReferenceMeasure * 1;
-  muteX1 = pauseX - buttonReferenceMeasure * 5.25;
+  muteY = pauseY - buttonReferenceMeasure * -0.5;
+  muteX1 = pauseX - buttonReferenceMeasure * 5.3;
   muteY1 = pauseY - buttonReferenceMeasure * 2;
-  muteX2 = pauseX - buttonReferenceMeasure * 5.25;
+  muteX2 = pauseX - buttonReferenceMeasure * 5.3;
   muteY2 = pauseY - buttonReferenceMeasure * 3;              //first of three lines
   //
-  muteX3 = pauseX - buttonReferenceMeasure * 0;
-  muteY3 = pauseY - buttonReferenceMeasure * 0;
-  muteX4 = pauseX - buttonReferenceMeasure * -0.45;
-  muteY4 = pauseY - buttonReferenceMeasure * -0.7;
-  muteX5 = pauseX - buttonReferenceMeasure * -0.45;
-  muteY5 = pauseY - buttonReferenceMeasure * -0.3;             //third of three lines
+  muteX3 = pauseX - buttonReferenceMeasure * 4;
+  muteY3 = pauseY - buttonReferenceMeasure * 2;
+  muteX4 = pauseX - buttonReferenceMeasure * 5;
+  muteY4 = pauseY - buttonReferenceMeasure * 2.2;
+  muteX5 = pauseX - buttonReferenceMeasure * 5;
+  muteY5 = pauseY - buttonReferenceMeasure * 2.8;             //third of three lines
   //
-  muteX6 = pauseX - buttonReferenceMeasure * 0;
+  muteX6 = pauseX - buttonReferenceMeasure * 3.75;
   muteY6 = pauseY - buttonReferenceMeasure * 0;
-  muteX7 = pauseX - buttonReferenceMeasure * -0.6;
-  muteY7 = pauseY - buttonReferenceMeasure * -0.95;
-  muteX8 = pauseX - buttonReferenceMeasure * -0.6;
-  muteY8 = pauseY - buttonReferenceMeasure * -0.05;          //speaker shape thing left side
+  muteX7 = pauseX - buttonReferenceMeasure * 4.8;
+  muteY7 = pauseY - buttonReferenceMeasure * 2.1;
+  muteX8 = pauseX - buttonReferenceMeasure * 4.8;
+  muteY8 = pauseY - buttonReferenceMeasure * 2.9;          //speaker shape thing left side
   //
   muteX14 = pauseX - buttonReferenceMeasure * 0;
   muteY14 = pauseY - buttonReferenceMeasure * 0;
@@ -164,20 +164,21 @@ void draw() {
   muteX16 = pauseX - buttonReferenceMeasure * -0.615;
   muteY16 = pauseY - buttonReferenceMeasure * -0.15;          //speaker shape thing right side
   //
-  muteX9 = pauseX - buttonReferenceMeasure * 0;
-  muteY9 = pauseY - buttonReferenceMeasure * 0;
-  muteX10 = pauseX - buttonReferenceMeasure * -0.15;
-  muteY10 = pauseY - buttonReferenceMeasure * -0.85;
-  muteX11 = pauseX - buttonReferenceMeasure * -0.35;
-  muteY11 = pauseY - buttonReferenceMeasure * -0.15;      //second of three lines
+  muteX9 = pauseX - buttonReferenceMeasure * 4;
+  muteY9 = pauseY - buttonReferenceMeasure * 1;
+  muteX10 = pauseX - buttonReferenceMeasure * 5.15;
+  muteY10 = pauseY - buttonReferenceMeasure * 2.1;
+  muteX11 = pauseX - buttonReferenceMeasure * 5.15;
+  muteY11 = pauseY - buttonReferenceMeasure * 2.9;      //second of three lines
   //
   muteX12 = centerX - buttonReferenceMeasure * 6;
   muteY12 = centerY - buttonReferenceMeasure * 3.5;
-  muteX13 = centerX - buttonReferenceMeasure * 4.9;
-  muteY13 = centerY - buttonReferenceMeasure * 2.95;       //speaker shape thing seperate line
+  //
+  muteX13 = centerX - buttonReferenceMeasure * 5.3;
+  muteY13 = centerY - buttonReferenceMeasure * 3.45;       //speaker shape thing seperate line
   //
   muteWidthDiammeter = pauseX - buttonReferenceMeasure * -5;
-  muteHeightDiammeter = pauseY - buttonReferenceMeasure * 1.75;     //seccond of three lines
+  muteHeightDiammeter = pauseY - buttonReferenceMeasure * 2;
   //
   loopX = pauseX - buttonReferenceMeasure * -1.65;
   loopY = pauseY - buttonReferenceMeasure * -1.5;
@@ -226,10 +227,10 @@ void draw() {
   //
   //Mute Button
   rect( muteX12, muteY12, buttonSide, buttonSide );
-  curve( muteX, muteY, muteX1, muteY1, muteX2, muteY2, muteWidthDiammeter * 0.25, muteHeightDiammeter * -1.5 );           //first of three lines
-  curve( muteX9, muteY9, muteX10, muteY10, muteX11, muteY11, muteWidthDiammeter * 0.2, muteHeightDiammeter * -1.25 );     //second of three lines
-  curve( muteX3, muteY3, muteX4, muteY4, muteX5, muteY5, muteWidthDiammeter * 0.15, muteHeightDiammeter * -0.625 );       //third of three lines
-  curve( muteX6, muteY6, muteX7, muteY7, muteX8, muteY8, muteWidthDiammeter * 0.25, muteHeightDiammeter * -2 );          //speaker shape thing left side
+  curve( muteX, muteY, muteX1, muteY1, muteX2, muteY2, muteWidthDiammeter * 0.05, muteHeightDiammeter * -0.5 );           //first of three lines
+  curve( muteX9, muteY9, muteX10, muteY10, muteX11, muteY11, muteWidthDiammeter * 0.1, muteHeightDiammeter * -0.5 );     //second of three lines
+  curve( muteX3, muteY3, muteX4, muteY4, muteX5, muteY5, muteWidthDiammeter * 0.15, muteHeightDiammeter * -0.15 );       //third of three lines
+  curve( muteX6, muteY6, muteX7, muteY7, muteX8, muteY8, muteWidthDiammeter * 0.2, muteHeightDiammeter * -2 );          //speaker shape thing left side
   curve( muteX14, muteY14, muteX15, muteY15, muteX16, muteY16, muteWidthDiammeter * -0.25, muteHeightDiammeter * -0.65 );  //speaker shape thing right side
   rect( muteX13, muteY13, buttonSide * 0.0075, buttonSide * 0.9 );                                                          //speaker shape thing seperate line
   //
