@@ -68,7 +68,7 @@ void playPause()
     //try using autoplay as it's better and better marks, also easier as it automatically plays next song
   } else {
     //autoPlay(), is better here
-    songs[currentSong].play(); //Interim solution                       (marked on interim, so do differently)
+    songs[currentSong].play(); //Interim solution       (marked on interim, so do differently) 
   }
 }//End PlayPause
 //
@@ -110,21 +110,27 @@ void fastRewind() {
 }//End FastRewind
 //
 void nextSong() {
-}//End NextSong
+ 
+} //End NextSong
 //
 void previousSong() {
+  
 }//End previousSong
 //
 void loopSong() {
+  
 }//End loopSong
 //
 void loopPlaylist() {
+  
 }//End loopPlaylist
 //
 void shufflePlaylist() {
+  
 }//End shufflePlaylist
 //
 void loopAndShuffle() {
+  
 }//End loopAndShuffle
 //
 //End Key Board Short Cuts Sub Program

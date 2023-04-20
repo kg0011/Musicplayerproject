@@ -157,12 +157,12 @@ void draw() {
   muteX8 = pauseX - buttonReferenceMeasure * 4.8;
   muteY8 = pauseY - buttonReferenceMeasure * 2.9;          //speaker shape thing left side
   //
-  muteX14 = pauseX - buttonReferenceMeasure * 0;
-  muteY14 = pauseY - buttonReferenceMeasure * 0;
-  muteX15 = pauseX - buttonReferenceMeasure * -0.615;
-  muteY15 = pauseY - buttonReferenceMeasure * -0.85;
-  muteX16 = pauseX - buttonReferenceMeasure * -0.615;
-  muteY16 = pauseY - buttonReferenceMeasure * -0.15;          //speaker shape thing right side
+  muteX14 = pauseX - buttonReferenceMeasure * 6.25;
+  muteY14 = pauseY - buttonReferenceMeasure * 2;
+  muteX15 = pauseX - buttonReferenceMeasure * 4.8;
+  muteY15 = pauseY - buttonReferenceMeasure * 2.1;
+  muteX16 = pauseX - buttonReferenceMeasure * 4.8;
+  muteY16 = pauseY - buttonReferenceMeasure * 2.9;          //speaker shape thing right side
   //
   muteX9 = pauseX - buttonReferenceMeasure * 4;
   muteY9 = pauseY - buttonReferenceMeasure * 1;
@@ -172,7 +172,7 @@ void draw() {
   muteY11 = pauseY - buttonReferenceMeasure * 2.9;      //second of three lines
   //
   muteX12 = centerX - buttonReferenceMeasure * 6;
-  muteY12 = centerY - buttonReferenceMeasure * 3.5;
+  muteY12 = centerY - buttonReferenceMeasure * 3.5;      //mute click box
   //
   muteX13 = centerX - buttonReferenceMeasure * 5.3;
   muteY13 = centerY - buttonReferenceMeasure * 3.45;       //speaker shape thing seperate line
@@ -223,7 +223,8 @@ void draw() {
   //
   //Play Button
   //rect( playX3, playY3, buttonSide, buttonSide );
-  //triangle( playX, playY, playX1, playY1, playX2, playY2 ); //Layout
+  triangle( playX, playY, playX1, playY1, playX2, playY2 ); //Layout
+  if ( mousePressed ) playButtonCode();                                 //find out how to code on click
   //
   //Mute Button
   rect( muteX12, muteY12, buttonSide, buttonSide );
@@ -231,8 +232,8 @@ void draw() {
   curve( muteX9, muteY9, muteX10, muteY10, muteX11, muteY11, muteWidthDiammeter * 0.1, muteHeightDiammeter * -0.5 );     //second of three lines
   curve( muteX3, muteY3, muteX4, muteY4, muteX5, muteY5, muteWidthDiammeter * 0.15, muteHeightDiammeter * -0.15 );       //third of three lines
   curve( muteX6, muteY6, muteX7, muteY7, muteX8, muteY8, muteWidthDiammeter * 0.2, muteHeightDiammeter * -2 );          //speaker shape thing left side
-  curve( muteX14, muteY14, muteX15, muteY15, muteX16, muteY16, muteWidthDiammeter * -0.25, muteHeightDiammeter * -0.65 );  //speaker shape thing right side
-  rect( muteX13, muteY13, buttonSide * 0.0075, buttonSide * 0.9 );                                                          //speaker shape thing seperate line
+  curve( muteX14, muteY14, muteX15, muteY15, muteX16, muteY16, muteWidthDiammeter * -0.15, muteHeightDiammeter * -0.65 );  //speaker shape thing right side
+  rect( muteX13, muteY13, buttonSide * 0.05, buttonSide * 0.9 );                                                          //speaker shape thing seperate line
   //
   //Fast Forawrd in the song
   //rect( ffX7, ffY7, buttonSide, buttonSide );
@@ -285,6 +286,7 @@ void keyPressed() {
 } //End keyPressed
 //
 void mousePressed() {
+  
 } // End mousePressed
 //
 //End MAIN Program
