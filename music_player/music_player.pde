@@ -53,7 +53,7 @@ void draw() {
   float loopInfX, loopInfY, loopInfX1, loopInfY1, loopInfX2, loopInfY2, loopInfX3, loopInfY3;
   float loopInfX4, loopInfY4, loopInfX5, loopInfY5, loopInfWidthDiammeter, loopInfHeightDiammeter;
   float loopPLX, loopPLY, loopPLX1, loopPLY1, loopPLX2, loopPLY2, loopPLX3, loopPLY3;
-  float shuffleX, shuffleY, shuffleX1, shuffleY1, shuffleDiameter;
+  float shuffleX, shuffleY, shuffleX1, shuffleY1, shuffleX2, shuffleY2, shuffleX3, shuffleY3, shuffleX4, shuffleY4, shuffleX5, shuffleY5, shuffleX6, shuffleY6, shuffleX7, shuffleY7, shuffleDiameter;
   Float picRectX, picRectY;
   //
   //Population: visual data
@@ -214,9 +214,24 @@ void draw() {
   //
   shuffleX = pauseX - buttonReferenceMeasure * -1;
   shuffleY = pauseY - buttonReferenceMeasure * -1.5;
-  shuffleX1 = pauseX - buttonReferenceMeasure * 0;
-  shuffleY1 = pauseY - buttonReferenceMeasure * 0;
-  shuffleDiameter = pauseX - buttonReferenceMeasure * 0;                              //fix circle
+  shuffleX1 = pauseX - buttonReferenceMeasure * -1.5;
+  shuffleY1 = pauseY - buttonReferenceMeasure * -2; //shuffle circle
+  //
+  shuffleX2 = pauseX - buttonReferenceMeasure * -1.3;
+  shuffleY2 = pauseY - buttonReferenceMeasure * -1.5;
+  shuffleX3 = pauseX - buttonReferenceMeasure * -1.65;
+  shuffleY3 = pauseY - buttonReferenceMeasure * -1.65;                               //finish shuffle
+  shuffleX4 = pauseX - buttonReferenceMeasure * -1.65;
+  shuffleY4 = pauseY - buttonReferenceMeasure * -1.35; //top triangle
+  //
+  shuffleX5 = pauseX - buttonReferenceMeasure * -1.65;
+  shuffleY5 = pauseY - buttonReferenceMeasure * -2.35;
+  shuffleX6 = pauseX - buttonReferenceMeasure * -1.3;
+  shuffleY6 = pauseY - buttonReferenceMeasure * -2.5;
+  shuffleX7 = pauseX - buttonReferenceMeasure * -1.3; 
+  shuffleY7 = pauseY - buttonReferenceMeasure * -2.2; //bottom triangle
+  //
+  shuffleDiameter = pauseX - buttonReferenceMeasure * 4.75;
   //
   picRectX = pauseX - buttonReferenceMeasure * 1;
   picRectY = pauseY - buttonReferenceMeasure * 3.5;
@@ -281,6 +296,8 @@ void draw() {
   //Shuffle and loop playlist
   rect( shuffleX, shuffleY, buttonSide, buttonSide );
   circle( shuffleX1, shuffleY1, shuffleDiameter );
+  triangle( shuffleX2, shuffleY2, shuffleX3, shuffleY3, shuffleX4, shuffleY4 );
+  triangle( shuffleX5, shuffleY5, shuffleX6, shuffleY6, shuffleX7, shuffleY7 );
   //
   //Picture for song goes in shape
   rect( picRectX, picRectY, buttonSide * 3, buttonSide * 3 );
