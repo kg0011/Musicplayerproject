@@ -18,6 +18,42 @@ int currentSong = int ( random( numberOfSongs-1 ) );   //starts playlist from ra
 //
 int time = 7000;
 //
+//
+/*
+void textSetup() {
+  //
+  textRectX = buttonReferenceMeasure * 0;
+  textRectY = buttonReferenceMeasure * 0;
+  //
+  rect( textRectX, textRectY, textRectWidth, textRectHeight );
+  //
+  font = createFont ("verdana bold", 55); //Verify font exists
+  //
+//
+void allText() {                                                 //find how to fix this
+  textDraw1();
+  } //End all text
+  //
+  void preTextDraw() {
+  fill(purpleInk); //Ink, hexidecimal copied from Color Selector
+  textAlign (CENTER, CENTER); //Align X&Y, see processing.org / reference
+  //Horizontal Values (X): [LEFT | CENTER | RIGHT]
+  //Vertical Values (Y): [TOP | CENTER | BOTTOM | BASELINE]
+  int textSize = 25; //Change the number until it fits, largest font size
+  textFont(font, textSize);
+  }//End pre text draw
+  //
+  void textDraw1() {
+  preTextDraw();
+  //
+  textSize(25); //Change the number until it fits, largest font size
+  //
+  rect( textRectX1, textRectY1, textRectWidth, textRectHeight );
+  //
+  fill(resetWhiteInk); //reset
+  }//end text draw 1
+//
+*/
 void setup() {
   size(1200, 700); //width, height
   //fullScreen(); //displaywidth, displayheight
@@ -26,9 +62,17 @@ void setup() {
   //songs[0].loop(0);
   //soundEffects[0].loop(0);
 } //End setup
-//
+  //
 void draw() {
 //Global Variables for draw
+//
+/*
+float textRectX3, textRectY3, textRectWidth3, textRectHeight3;
+PFont font;
+color purpleInk=#AF00FF, resetWhiteInk=#FFFFFF; //Not nice for Night Mode, blue content
+String string1 = "1x";
+*/
+//
   float buttonReferenceMeasure;
   float buttonSide, spaceWidth, spaceHeight;
   float pauseX, pauseY, pauseX1, pauseY1, pauseX2, pauseY2;
@@ -217,18 +261,18 @@ void draw() {
   shuffleX1 = pauseX - buttonReferenceMeasure * -1.5;
   shuffleY1 = pauseY - buttonReferenceMeasure * -2; //shuffle circle
   //
-  shuffleX2 = pauseX - buttonReferenceMeasure * -1.3;
-  shuffleY2 = pauseY - buttonReferenceMeasure * -1.5;
+  shuffleX2 = pauseX - buttonReferenceMeasure * -1.35;
+  shuffleY2 = pauseY - buttonReferenceMeasure * -1.65;
   shuffleX3 = pauseX - buttonReferenceMeasure * -1.65;
-  shuffleY3 = pauseY - buttonReferenceMeasure * -1.65;                               //finish shuffle
+  shuffleY3 = pauseY - buttonReferenceMeasure * -1.8;
   shuffleX4 = pauseX - buttonReferenceMeasure * -1.65;
-  shuffleY4 = pauseY - buttonReferenceMeasure * -1.35; //top triangle
+  shuffleY4 = pauseY - buttonReferenceMeasure * -1.5; //top triangle
   //
   shuffleX5 = pauseX - buttonReferenceMeasure * -1.65;
   shuffleY5 = pauseY - buttonReferenceMeasure * -2.35;
-  shuffleX6 = pauseX - buttonReferenceMeasure * -1.3;
+  shuffleX6 = pauseX - buttonReferenceMeasure * -1.35;
   shuffleY6 = pauseY - buttonReferenceMeasure * -2.5;
-  shuffleX7 = pauseX - buttonReferenceMeasure * -1.3; 
+  shuffleX7 = pauseX - buttonReferenceMeasure * -1.35; 
   shuffleY7 = pauseY - buttonReferenceMeasure * -2.2; //bottom triangle
   //
   shuffleDiameter = pauseX - buttonReferenceMeasure * 4.75;
