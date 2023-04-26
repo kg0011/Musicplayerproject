@@ -284,7 +284,7 @@ String string1 = "1x";
   //rect( spaceX, spaceY, spaceWidth, spaceHeight );
   //
   //Stop Button
-  rect( stopX, stopY, buttonSide, buttonSide ); //Layout
+  rect( stopX, stopY, buttonSide, buttonSide ); /*Layout*/
   //
   //Pause Button
   //rect( pauseX1, pauseY1, buttonSide, buttonSide );
@@ -293,8 +293,7 @@ String string1 = "1x";
   //
   //Play Button
   //rect( playX3, playY3, buttonSide, buttonSide );
-  triangle( playX, playY, playX1, playY1, playX2, playY2 ); //Layout
- //if ( mousePressed ) playButtonCode();                                 //find out how to code on click
+  triangle( playX, playY, playX1, playY1, playX2, playY2 ); //Layout                            //find out how to code on click
   //
   //Mute Button
   rect( muteX12, muteY12, buttonSide, buttonSide );
