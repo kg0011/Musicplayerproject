@@ -53,11 +53,17 @@ void quitButtonCode() {
 //
 void autoPlay() {
   //Plays one song then the next automatically
-    
+    if ( autoPlay==false ) {
+      autoPlay=true;
+    } else {
+      autoPlay=false;
+      songs[currentSong].pause();
+      //songs[currentSong].rewind();
 }
   //Asks computer if song is playing constantlly
   //When current song ends, rewinds current song and plays the next
 }//End AutoPlay
+
 //
 void playPause() 
 {
@@ -112,27 +118,35 @@ void fastRewind() {
 }//End FastRewind
 //
 void nextSong() {
- 
+ if ( songs[currentSong].isPlaying() ) {
+   songs[currentSong].pause();
+   songs[currentSong].skip(1000000);
+ } else {
+   songs[currentSong].skip(1000000);
+ }
 } //End NextSong
 //
 void previousSong() {
-  
+  if ( songs[currentSong].isPlaying() ) {
+    songs[currentSong].pause();
+    songs[currentSong].skip(1000000);
+    //songs[].play();                  //find how to play previous song
+  } else {
+    songs[currentSong].skip(1000000);
+    //songs[].play();                  //find how to play previous song
+  }
 }//End previousSong
 //
 void loopSong() {
-  
+  if ( loopSong==true ) songs[currentSong].loop(1);
 }//End loopSong
 //
-void loopPlaylist() {
-  
+void loopInfinite() {
+  if ( loopSong==true ) songs[currentSong].loop();    //loop infinitely
 }//End loopPlaylist
 //
 void shufflePlaylist() {
   
 }//End shufflePlaylist
-//
-void loopAndShuffle() {
-  
-}//End loopAndShuffle
 //
 //End Key Board Short Cuts Sub Program

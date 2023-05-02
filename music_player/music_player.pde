@@ -18,6 +18,8 @@ int currentSong = int ( random( numberOfSongs-1 ) );   //starts playlist from ra
 //
 int time = 7000;
 //
+Boolean loopSong;
+Boolean autoPlay;
 //
 /*
 void textSetup() {
@@ -59,6 +61,9 @@ void setup() {
   //fullScreen(); //displaywidth, displayheight
   background(0);
   loadMusic();
+  //
+  loopSong=false;
+  //
   //songs[0].loop(0);
   //soundEffects[0].loop(0);
 } //End setup
