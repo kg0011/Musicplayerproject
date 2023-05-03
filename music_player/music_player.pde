@@ -19,6 +19,7 @@ int currentSong = int ( random( numberOfSongs-1 ) );   //starts playlist from ra
 int time = 7000;
 //
 Boolean loopSong;
+Boolean shufflePlaylist;
 Boolean autoPlay;
 //
 /*

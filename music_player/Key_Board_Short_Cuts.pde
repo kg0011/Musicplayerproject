@@ -29,9 +29,8 @@ void musicShortCuts() {
   if ( key == 'N' || key=='n' ) nextSong();     //psuedo code only
   if ( key == 'B' || key=='b' ) previousSong();     //psuedo code only
   if ( key == 'L' || key=='l' ) loopSong();     //loops current song infinitly
-  if ( key == 'O' || key=='o' ) loopPlaylist();     //entire playlist
   if ( key == 'W' || key=='w' ) shufflePlaylist();     //shuffle
-  if ( key == 'E' || key=='e' ) loopAndShuffle();     //loop and Shuffle
+  if ( key == 'E' || key=='e' ) shufflePlaylist();     //loop and Shuffle
 }//End musicShortCuts
 //
 void quitButtons() {
@@ -145,8 +144,8 @@ void loopInfinite() {
   if ( loopSong==true ) songs[currentSong].loop();    //loop infinitely
 }//End loopPlaylist
 //
-void shufflePlaylist() {
+void shufflePlaylist() { 
   
-}//End shufflePlaylist
+} //End shufflePlaylist
 //
 //End Key Board Short Cuts Sub Program
