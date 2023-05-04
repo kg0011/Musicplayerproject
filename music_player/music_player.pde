@@ -16,6 +16,8 @@ int numberOfSoundEffects = 2;
 AudioPlayer[] soundEffects = new AudioPlayer[numberOfSoundEffects];
 int currentSong = int ( random( numberOfSongs-1 ) );   //starts playlist from random song
 //
+int randomSong = int ( random( numberOfSongs ) );
+//
 int time = 7000;
 //
 Boolean loopSong;

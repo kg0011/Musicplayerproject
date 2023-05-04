@@ -50,6 +50,8 @@ void quitButtonCode() {
   exit();
 }//End quitButtonCode
 //
+//void musicFeaturesCode () {               //find out how to make code that allows for this code to work
+  //
 void autoPlay() {
   //Plays one song then the next automatically
     if ( autoPlay==false ) {
@@ -141,11 +143,16 @@ void loopSong() {
 }//End loopSong
 //
 void loopInfinite() {
-  if ( loopSong==true ) songs[currentSong].loop();    //loop infinitely
+  if ( loopSong==true ) songs[currentSong].loop(99999999);    //loop infinitely better
 }//End loopPlaylist
 //
 void shufflePlaylist() { 
-  
+  if ( songs[currentSong].isPlaying() ) {
+    songs[currentSong].pause();
+    songs[randomSong].play();
+  } else {
+    songs[randomSong].play();
 } //End shufflePlaylist
+} //End music features code
 //
 //End Key Board Short Cuts Sub Program
