@@ -64,6 +64,7 @@ void setup() {
   //fullScreen(); //displaywidth, displayheight
   background(0);
   loadMusic();
+  //imageCode();      //implement later
   //
   loopSong=false;
   //
@@ -84,7 +85,7 @@ String string1 = "1x";
   float buttonReferenceMeasure;
   float buttonSide, spaceWidth, spaceHeight;
   float pauseX, pauseY, pauseX1, pauseY1, pauseX2, pauseY2;
-  float stopX, stopY, stopX1, stopY1, stopX2, stopY2, stopWidth, stopHeight;
+  float stopX, stopY, stopWidth, stopHeight;
   float playX, playY, playX1, playY1, playX2, playY2, playX3, playY3;
   float muteX, muteY, muteX1, muteY1, muteX2, muteY2, muteX3, muteY3;
   float muteX4, muteY4, muteX5, muteY5, muteX6, muteY6;
@@ -288,7 +289,7 @@ String string1 = "1x";
   picRectX = pauseX - buttonReferenceMeasure * 1;
   picRectY = pauseY - buttonReferenceMeasure * 3.5;
   //
-  //Button Space
+  //Button Space                                            *****may need to split drawings into different tabs in order for coding on click to work*****
   //rect( spaceX, spaceY, spaceWidth, spaceHeight );
   //
   //Stop Button

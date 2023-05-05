@@ -11,8 +11,8 @@ void musicShortCuts() {
   if ( key == '1' ) songs[0].loop(0); //.rewind() is included in .loop()
   if ( key == '2' ) songs[1].loop(0);
   if ( key == '3' ) songs[2].loop(0);
-  if ( key == '4' ) songs[3].loop(0);
-  if ( key == '5' ) songs[4].loop(0);
+  if ( key == '4' ) songs[3].loop(0);                                               //get rid of these shortcuts if coding still does not work through these shortcuts
+  if ( key == '5' ) songs[4].loop(0);    //fix loop() to 0 if code still does not work
   if ( key == '6' ) songs[5].loop(0);
   if ( key == '7' ) songs[6].loop(0);
   if ( key == '8' ) songs[7].loop(0);
@@ -30,7 +30,6 @@ void musicShortCuts() {
   if ( key == 'B' || key=='b' ) previousSong();     //psuedo code only
   if ( key == 'L' || key=='l' ) loopSong();     //loops current song infinitly
   if ( key == 'W' || key=='w' ) shufflePlaylist();     //shuffle
-  if ( key == 'E' || key=='e' ) shufflePlaylist();     //loop and Shuffle
 }//End musicShortCuts
 //
 void quitButtons() {
@@ -50,24 +49,23 @@ void quitButtonCode() {
   exit();
 }//End quitButtonCode
 //
-//void musicFeaturesCode () {               //find out how to make code that allows for this code to work
+//void musicFeaturesCode () {               //find out how to make code that allows for this code to work or make all code seperate tabs
   //
 void autoPlay() {
   //Plays one song then the next automatically
     if ( autoPlay==false ) {
-      autoPlay=true;
+      songs[currentSong].pause();
+      songs[currentSong].rewind();
     } else {
       autoPlay=false;
-      songs[currentSong].pause();
-      //songs[currentSong].rewind();
+      songs[currentSong].rewind();           //fix if not working
 }
   //Asks computer if song is playing constantlly
   //When current song ends, rewinds current song and plays the next
 }//End AutoPlay
 
 //
-void playPause() 
-{
+void playPause() {
   //error: song will not play if at the end
   if ( songs[currentSong].isPlaying() ) {
     songs[currentSong].pause();
@@ -141,7 +139,7 @@ void previousSong() {
 void loopSong() {
   if ( loopSong==true ) songs[currentSong].loop(1);
 }//End loopSong
-//
+//\
 void loopInfinite() {
   if ( loopSong==true ) songs[currentSong].loop(99999999);    //loop infinitely better
 }//End loopPlaylist
