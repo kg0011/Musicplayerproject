@@ -20,16 +20,17 @@ void musicShortCuts() {
   if ( key == '-' ) soundEffects[1].loop(0);
   //
   //Students to make code smarter
-  if ( key == 'U' || key=='u' ) autoPlay();     //psuedo code only
-  if ( key == 'P' || key=='p' ) playPause();     //teacher started
-  if ( key == 'M' || key=='m' ) mute();     //teacher started
-  if ( key == 'S' || key=='s' ) stopSong();     //teacher started
-  if ( key == 'F' || key=='f' ) fastForward();     //
-  if ( key == 'R' || key=='r' ) fastRewind();     //
-  if ( key == 'N' || key=='n' ) nextSong();     //psuedo code only
-  if ( key == 'B' || key=='b' ) previousSong();     //psuedo code only
-  if ( key == 'L' || key=='l' ) loopSong();     //loops current song infinitly
-  if ( key == 'W' || key=='w' ) shufflePlaylist();     //shuffle
+  if ( key == 'U' || key=='u' ) autoPlay();     //         ***test
+  if ( key == 'P' || key=='p' ) playPause();     //finished + works
+  if ( key == 'M' || key=='m' ) mute();     //finished + works
+  if ( key == 'S' || key=='s' ) stopSong();     //finished + works
+  if ( key == 'F' || key=='f' ) fastForward();     //finished + works
+  if ( key == 'R' || key=='r' ) fastRewind();     //finished + works
+  if ( key == 'N' || key=='n' ) nextSong();     //finished + works
+  if ( key == 'B' || key=='b' ) previousSong();     //fnished + works
+  if ( key == 'L' || key=='l' ) loopSong();     //finished         ***test
+  if ( key == 'I' || key=='i' ) loopInfinite(); //finished         ***test
+  if ( key == 'W' || key=='w' ) shufflePlaylist();  //         ***test
 }//End musicShortCuts
 //
 void quitButtons() {
@@ -56,10 +57,12 @@ void autoPlay() {
     if ( autoPlay==false ) {
       songs[currentSong].pause();
       songs[currentSong].rewind();
-    } else {
-      autoPlay=false;
-      songs[currentSong].rewind();           //fix if not working
-}
+    } else if ( autoPlay==true ) {        //fix if not working
+    songs[currentSong].play();
+    if ( songs[currentSong].isPlaying()==false ) {
+      songs[currentSong].skip(9999999);
+    }
+  }
   //Asks computer if song is playing constantlly
   //When current song ends, rewinds current song and plays the next
 }//End AutoPlay
@@ -119,20 +122,27 @@ void fastRewind() {
 void nextSong() {
  if ( songs[currentSong].isPlaying() ) {
    songs[currentSong].pause();
-   songs[currentSong].skip(1000000);
+   songs[currentSong].rewind();
+   currentSong++;
+   songs[currentSong].play();
  } else {
-   songs[currentSong].skip(1000000);
+   songs[currentSong].rewind();
+   currentSong++;
+   songs[currentSong].play();
  }
 } //End NextSong
 //
 void previousSong() {
   if ( songs[currentSong].isPlaying() ) {
     songs[currentSong].pause();
-    songs[currentSong].skip(1000000);
+    songs[currentSong].rewind();
+    currentSong--;
+    songs[currentSong].play();
     //songs[].play();                  //find how to play previous song
   } else {
-    songs[currentSong].skip(1000000);
-    //songs[].play();                  //find how to play previous song
+    songs[currentSong].rewind();
+    currentSong--;
+    songs[currentSong].play();
   }
 }//End previousSong
 //
@@ -147,9 +157,10 @@ void loopInfinite() {
 void shufflePlaylist() { 
   if ( songs[currentSong].isPlaying() ) {
     songs[currentSong].pause();
+    songs[currentSong].rewind();
     songs[randomSong].play();
   } else {
-    songs[randomSong].play();
+    songs[randomSong].play();                           //test and fix
 } //End shufflePlaylist
 } //End music features code
 //
