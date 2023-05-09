@@ -21,6 +21,7 @@ int randomSong = int ( random( numberOfSongs ) );
 int time = 7000;
 //
 Boolean loopSong;
+Boolean loopInfinite;
 //Boolean shufflePlaylist;           <--------  //re enable if this works
 Boolean autoPlay;
 //
@@ -63,6 +64,8 @@ void setup() {
   size(1200, 700); //width, height
   //fullScreen(); //displaywidth, displayheight
   autoPlay=false;
+  loopSong=false;
+  loopInfinite=false;
   background(0);
   loadMusic();
   //imageCode();      //implement later

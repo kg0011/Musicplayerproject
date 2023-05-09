@@ -20,7 +20,7 @@ void musicShortCuts() {
   if ( key == '-' ) soundEffects[1].loop(0);
   //
   //Students to make code smarter
-  if ( key == 'U' || key=='u' ) autoPlay();     //         ***test
+  if ( key == 'U' || key=='u' ) autoPlay();     //         ***
   if ( key == 'P' || key=='p' ) playPause();     //finished + works
   if ( key == 'M' || key=='m' ) mute();     //finished + works
   if ( key == 'S' || key=='s' ) stopSong();     //finished + works
@@ -30,7 +30,7 @@ void musicShortCuts() {
   if ( key == 'B' || key=='b' ) previousSong();     //fnished + works
   if ( key == 'L' || key=='l' ) loopSong();     //finished         ***test
   if ( key == 'I' || key=='i' ) loopInfinite(); //finished         ***test
-  if ( key == 'W' || key=='w' ) shufflePlaylist();  //         ***test
+  if ( key == 'W' || key=='w' ) shufflePlaylist();  //         ***
 }//End musicShortCuts
 //
 void quitButtons() {
@@ -54,6 +54,7 @@ void quitButtonCode() {
   //
 void autoPlay() {
   //Plays one song then the next automatically
+  if ( key == 'U' || key=='u' ) autoPlay=true;
     if ( autoPlay==false ) {
       songs[currentSong].pause();
       songs[currentSong].rewind();
@@ -147,11 +148,21 @@ void previousSong() {
 }//End previousSong
 //
 void loopSong() {
-  if ( loopSong==true ) songs[currentSong].loop(1);
+  if ( loopSong==true ) {
+    songs[currentSong].loop(1);
+  } else {
+    loopSong=false;
+    songs[currentSong].loop(0);
+  }
 }//End loopSong
-//\
+//
 void loopInfinite() {
-  if ( loopSong==true ) songs[currentSong].loop(99999999);    //loop infinitely better
+  if ( loopInfinite==true ) {
+    songs[currentSong].loop(99999999);      //find out why this line does not work or revert back to loopInfinite
+  } else { 
+    loopInfinite=false;
+    songs[currentSong].loop(0);
+  }
 }//End loopPlaylist
 //
 void shufflePlaylist() { 
@@ -160,7 +171,7 @@ void shufflePlaylist() {
     songs[currentSong].rewind();
     songs[randomSong].play();
   } else {
-    songs[randomSong].play();                           //test and fix
+    songs[randomSong].play();                           //test and fix    ***may not be possible
 } //End shufflePlaylist
 } //End music features code
 //
