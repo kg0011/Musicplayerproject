@@ -20,17 +20,17 @@ void musicShortCuts() {
   if ( key == '-' ) soundEffects[1].loop(0);
   //
   //Students to make code smarter
-  if ( key == 'U' || key=='u' ) autoPlay();     //         ***
-  if ( key == 'P' || key=='p' ) playPause();     //finished + works
-  if ( key == 'M' || key=='m' ) mute();     //finished + works
-  if ( key == 'S' || key=='s' ) stopSong();     //finished + works
-  if ( key == 'F' || key=='f' ) fastForward();     //finished + works
-  if ( key == 'R' || key=='r' ) fastRewind();     //finished + works
-  if ( key == 'N' || key=='n' ) nextSong();     //finished + works
-  if ( key == 'B' || key=='b' ) previousSong();     //fnished + works
-  if ( key == 'L' || key=='l' ) loopSong();     //finished         ***test
-  if ( key == 'I' || key=='i' ) loopInfinite(); //finished         ***test
-  if ( key == 'W' || key=='w' ) shufflePlaylist();  //         ***
+  if ( key == 'U' || key=='u' ) autoPlay();         //***
+  if ( key == 'P' || key=='p' ) playPause();        //finished + works
+  if ( key == 'M' || key=='m' ) mute();             //finished + works
+  if ( key == 'S' || key=='s' ) stopSong();         //finished + works
+  if ( key == 'F' || key=='f' ) fastForward();      //finished + works
+  if ( key == 'R' || key=='r' ) fastRewind();       //finished + works
+  if ( key == 'N' || key=='n' ) nextSong();         //finished + works
+  if ( key == 'B' || key=='b' ) previousSong();     //finished + works
+  if ( key == 'L' || key=='l' ) loopSong();         //finished         ***test
+  if ( key == 'I' || key=='i' ) loopInfinite();     //finished         ***test
+  if ( key == 'W' || key=='w' ) shufflePlaylist();  //***
 }//End musicShortCuts
 //
 void quitButtons() {
@@ -46,7 +46,7 @@ void quitButtons() {
 void quitButtonCode() {
   soundEffects[0].loop(0); //only need partial file, use millisecconds
   //Visual Image or Text of Goodbye
-  delay(3000); //alternate way of playing sound once
+  delay(3000); //alternate way of playing sound once: mercers sound effect, not current one
   exit();
 }//End quitButtonCode
 //
@@ -54,14 +54,15 @@ void quitButtonCode() {
   //
 void autoPlay() {
   //Plays one song then the next automatically
-  if ( key == 'U' || key=='u' ) autoPlay=true;
     if ( autoPlay==false ) {
       songs[currentSong].pause();
       songs[currentSong].rewind();
-    } else if ( autoPlay==true ) {        //fix if not working
+      if ( key == 'U' || key=='u' ) autoPlay=true;
+    } else if ( autoPlay==true ) {        //fix******swap false and true statements if still not working
     songs[currentSong].play();
     if ( songs[currentSong].isPlaying()==false ) {
       songs[currentSong].skip(9999999);
+      if ( key == 'U' || key=='u' ) autoPlay=false;
     }
   }
   //Asks computer if song is playing constantlly
@@ -139,7 +140,6 @@ void previousSong() {
     songs[currentSong].rewind();
     currentSong--;
     songs[currentSong].play();
-    //songs[].play();                  //find how to play previous song
   } else {
     songs[currentSong].rewind();
     currentSong--;
@@ -150,18 +150,22 @@ void previousSong() {
 void loopSong() {
   if ( loopSong==true ) {
     songs[currentSong].loop(1);
+    if ( key == 'L' || key=='l' ) loopSong=false;
   } else {
     loopSong=false;
     songs[currentSong].loop(0);
+    if ( key == 'L' || key=='l' ) loopSong=true;
   }
 }//End loopSong
 //
 void loopInfinite() {
   if ( loopInfinite==true ) {
-    songs[currentSong].loop(99999999);      //find out why this line does not work or revert back to loopInfinite
+    songs[currentSong].loop(99999999);
+    if ( key == 'I' || key=='i' ) loopInfinite=false;
   } else { 
     loopInfinite=false;
     songs[currentSong].loop(0);
+    if ( key == 'I' || key=='i' ) loopInfinite=true;
   }
 }//End loopPlaylist
 //
@@ -169,9 +173,12 @@ void shufflePlaylist() {
   if ( songs[currentSong].isPlaying() ) {
     songs[currentSong].pause();
     songs[currentSong].rewind();
-    songs[randomSong].play();
+    random( numberOfSongs );
+    songs[currentSong].play();
   } else {
-    songs[randomSong].play();                           //test and fix    ***may not be possible
+    songs[currentSong].rewind();
+    random( numberOfSongs );     //test and fix    ***may not be possible
+    songs[currentSong].play();
 } //End shufflePlaylist
 } //End music features code
 //
