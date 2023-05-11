@@ -68,9 +68,8 @@ void setup() {
   loopInfinite=false;
   background(0);
   loadMusic();
+  playPauseButton();
   //imageCode();      //implement later
-  //
-  loopSong=false;
   //
   //songs[0].loop(0);
   //soundEffects[0].loop(0);
@@ -88,7 +87,7 @@ String string1 = "1x";
 //
   float buttonReferenceMeasure;
   float buttonSide, spaceWidth, spaceHeight;
-  float pauseX, pauseY, pauseX1, pauseY1, pauseX2, pauseY2;
+  //pause floats
   float stopX, stopY, stopWidth, stopHeight;
   float playX, playY, playX1, playY1, playX2, playY2, playX3, playY3;
   float muteX, muteY, muteX1, muteY1, muteX2, muteY2, muteX3, muteY3;
@@ -300,9 +299,13 @@ String string1 = "1x";
   rect( stopX, stopY, buttonSide, buttonSide ); /*Layout*/
   //
   //Pause Button
-  //rect( pauseX1, pauseY1, buttonSide, buttonSide );
-  rect( pauseX, pauseY, buttonSide * 0.3, buttonSide ); //Layout
-  rect( pauseX2, pauseY2, buttonSide * 0.3, buttonSide );
+  
+  
+  
+  
+  
+  
+  
   //
   //Play Button
   //rect( playX3, playY3, buttonSide, buttonSide );
