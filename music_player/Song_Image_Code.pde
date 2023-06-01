@@ -1,4 +1,4 @@
-/* void imageCode() {                             //fix this tab so picture of song will be brought up when it's song is played
+ /*void imageCode() {                             //fix this tab so picture of song will be brought up when it's song is played
 int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
 PImage pic;
@@ -8,7 +8,7 @@ float whiteSpace=0.0;
 Boolean imageCenter=false, imageRightBottom=true; //Developer level image justification
 //
 size(440, 440); //Landscape
-appWidth = width;
+appWidth = width;                    //******remove if this changes the window rather than picture
 appHeight = height;
 //
 //Population
@@ -40,6 +40,7 @@ int picHeight = 440;   //Original Dimension,
 //Larger dimension algorithm, aspect ratio
 int smallerDimension, largerDimension;
 float imageHeightRatio, imageWidthRatio;
+}
 if ( picWidth = picHeight ) { //True if landscape or square
   largerDimension = picHeight;
   smallerDimension = picWidth;
@@ -67,14 +68,14 @@ if ( picWidth = picHeight ) { //True if landscape or square
   imageWidthRatio = picHeight*1/2;
   picWidthAdjusted = backgroundImageWidth;
   picHeightAdjusted = backgroundImageHeight;
-}
+  
 //
 //Rectangle Layout and Image drawing to CANVAS
 //rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
 //No Aspect ratio
 //
 //image( pic, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
-println ( picWidthAdjusted, picHeightAdjusted ); //View Juman Error on variables, zero values
+println ( picWidthAdjusted, picHeightAdjusted ); //View Human Error on variables, zero values
 image( pic, picX_Adjusted, picY_Adjusted, picWidthAdjusted, picHeightAdjusted );
 //Has Aspect Ratio
 } //end image code */
