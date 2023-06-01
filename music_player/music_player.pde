@@ -308,6 +308,9 @@ String string1 = "1x";
   //rect( playX3, playY3, buttonSide, buttonSide );
   triangle( playX, playY, playX1, playY1, playX2, playY2 ); //Layout                            //find out how to code on click
   //
+  //might need to make a specific area so if mouse is in area, click for button feature is valid
+  //
+  //
   //Mute Button
   rect( muteX12, muteY12, buttonSide, buttonSide );
   curve( muteX, muteY, muteX1, muteY1, muteX2, muteY2, muteWidthDiammeter * 0.05, muteHeightDiammeter * -0.5 );           //first of three lines
