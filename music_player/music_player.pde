@@ -16,7 +16,7 @@ int numberOfSoundEffects = 2;
 AudioPlayer[] soundEffects = new AudioPlayer[numberOfSoundEffects];
 int currentSong = int ( random( numberOfSongs-1 ) );   //starts playlist from random song
 //
-int randomSong = int ( random( numberOfSongs ) );
+int randomSong = int ( random( numberOfSongs ) );                                      //remove if not used
 //
 int time = 7000;
 //
@@ -109,7 +109,6 @@ String string1 = "1x";
   float loopX4, loopY4, loopX5, loopY5, loopWidthDiammeter, loopHeightDiammeter;
   float loopInfX, loopInfY, loopInfX1, loopInfY1, loopInfX2, loopInfY2, loopInfX3, loopInfY3;
   float loopInfX4, loopInfY4, loopInfX5, loopInfY5, loopInfWidthDiammeter, loopInfHeightDiammeter;
-  float loopPLX, loopPLY, loopPLX1, loopPLY1, loopPLX2, loopPLY2, loopPLX3, loopPLY3;
   float shuffleX, shuffleY, shuffleX1, shuffleY1, shuffleX2, shuffleY2, shuffleX3, shuffleY3, shuffleX4, shuffleY4, shuffleX5, shuffleY5, shuffleX6, shuffleY6, shuffleX7, shuffleY7, shuffleDiameter;
   Float picRectX, picRectY;
   //

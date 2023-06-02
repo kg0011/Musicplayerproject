@@ -32,7 +32,7 @@ love_me = "love_me.jpg";
 odyssey = "odyssey.jpg";
 lucky_charm = "ovsky.jpg";
 time = "ovsky.jpg";
-times_two = "times_two.jpg";               //add pictures for soundeffects if consdiered
+times_two = "times_two.jpg";               //add pictures for soundeffects if added
 //
 pic = loadImage( pathway + fileName );
 int picWidth = 440;   //Original Dimension, 
