@@ -84,6 +84,12 @@ color purpleInk=#AF00FF, resetWhiteInk=#FFFFFF; //Not nice for Night Mode, blue 
 String string1 = "1x";
 */
 //
+//Rectangle Layout and Image drawing to CANVAS
+//rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
+//No Aspect ratio
+//
+//Has Aspect Ratio
+//
   float buttonReferenceMeasure;
   float buttonSide, spaceWidth, spaceHeight;
   float pauseX, pauseY;
@@ -291,6 +297,7 @@ String string1 = "1x";
   //
   picRectX = pauseX - buttonReferenceMeasure * 1;
   picRectY = pauseY - buttonReferenceMeasure * 3.5;
+  //
   //
   //Button Space                                            *****may need to split drawings into different tabs in order for coding on click to work*****
   //rect( spaceX, spaceY, spaceWidth, spaceHeight );

@@ -46,7 +46,8 @@ void quitButtons() {
 void quitButtonCode() {
   soundEffects[0].loop(0); //only need partial file, use millisecconds
   //Visual Image or Text of Goodbye
-  delay(3000); //alternate way of playing sound once: mercers sound effect, not current one
+  
+  delay(1000); //alternate way of playing sound once: mercers sound effect, not current one
   exit();
 }//End quitButtonCode
 //
