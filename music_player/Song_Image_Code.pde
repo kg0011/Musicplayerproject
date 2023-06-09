@@ -1,14 +1,12 @@
- /*void imageCode() {                             //fix this tab so picture of song will be brought up when it's song is played
+/*void imageCode() {                             //fix this tab so picture of song will be brought up when it's song is played
 int appWidth, appHeight;
-float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
+float backgroundImageX, backgroundImageY, backgroundImageX1, backgroundImageY1, backgroundImageWidth, backgroundImageHeight;
 PImage pic;
 String pathway, fileName;
-float picX_Adjusted = 0.0, picY_Adjusted = 0.0, picWidthAdjusted=0.0, picHeightAdjusted=0.0; //IF requires previous value, not Null
 float whiteSpace=0.0;
 Boolean imageCenter=false, imageRightBottom=true; //Developer level image justification
 //
-size(440, 440); //Landscape
-appWidth = width;                    //******remove if this changes the window rather than picture
+appWidth = width;
 appHeight = height;
 //
 //Population
@@ -23,7 +21,7 @@ String upFolder = "..";
 String openFolder = "/";
 String folder1 = "music_player";
 String folder2 = "songPictures";
-pathway = folder1 + openFolder + folder2 + openFolder;
+pathway = music_player + openFolder + songPictures + openFolder;
 //
 falling = "falling.jpg";
 garden = "garden.jpg";
@@ -38,44 +36,13 @@ pic = loadImage( pathway + fileName );
 int picWidth = 440;   //Original Dimension, 
 int picHeight = 440;   //Original Dimension, 
 //Larger dimension algorithm, aspect ratio
-int smallerDimension, largerDimension;
-float imageHeightRatio, imageWidthRatio;
 }
-if ( picWidth = picHeight ) { //True if landscape or square
-  largerDimension = picHeight;
-  smallerDimension = picWidth;
-  imageHeightRatio = float (largerDimension) / float (smallerDimension); //Ratio <1, fized by casting
-  picWidthAdjusted = backgroundImageWidth; //Compression into rect()
-  picHeightAdjusted = picWidthAdjusted * imageHeightRatio; //Calculated variable from compressed variable
-  //If image fits, no changes are needed
-  picX_Adjusted = backgroundImageX;
-  picY_Adjusted = backgroundImageY;
-  //Justify Image
-  whiteSpace = backgroundImageHeight - picHeightAdjusted;
-  if ( imageCenter==true ) picX_Adjusted = backgroundImageY + whiteSpace*1/2;
-  if ( imageRightBottom==true ) picX_Adjusted = backgroundImageY + whiteSpace;
-  //
-  if ( picHeightAdjusted > backgroundImageHeight ) {   //error catch: adjusted height is bigger than rect()
-    picHeightAdjusted = backgroundImageHeight; //Uses automatic compression algorithm
-    picWidthAdjusted = picWidthAdjusted * imageHeightRatio; //New calculated value
-    whiteSpace = backgroundImageWidth - picWidthAdjusted;
-    if ( imageCenter==true ) picX_Adjusted = backgroundImageX + whiteSpace*1/2;
-    if ( imageRightBottom==true ) picX_Adjusted = backgroundImageX + whiteSpace;
-  }
-} else { //False if portrait
-  largerDimension = picHeight;
-  smallerDimension = picWidth;
-  imageWidthRatio = picHeight*1/2;
-  picWidthAdjusted = backgroundImageWidth;
-  picHeightAdjusted = backgroundImageHeight;
-  
 //
 //Rectangle Layout and Image drawing to CANVAS
-//rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
+rect( backgroundImageX1, backgroundImageY1, backgroundImageWidth, backgroundImageHeight );
 //No Aspect ratio
 //
-//image( pic, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
-println ( picWidthAdjusted, picHeightAdjusted ); //View Human Error on variables, zero values
-image( pic, picX_Adjusted, picY_Adjusted, picWidthAdjusted, picHeightAdjusted );
+//image( );
+image( pic, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
 //Has Aspect Ratio
-} //end image code */
+} //end image code*/

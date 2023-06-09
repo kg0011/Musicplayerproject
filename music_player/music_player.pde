@@ -1,3 +1,9 @@
+/*[] Make buttons clickable, do their function on click, could do method where cursor location is tracked and certain features are valid if in a spot
+  [] Make song images appear with corrosponding songs
+  [] Finish last few music button features
+  [] Finish text code (if needed)
+  [] Polish shapes up (if time)
+*/
 import ddf.minim.*;
 import ddf.minim.analysis.*;
 import ddf.minim.effects.*;
@@ -73,6 +79,7 @@ void setup() {
   //songs[0].loop(0);
   //soundEffects[0].loop(0);
 } //End setup
+  //
   //
 void draw() {
 //Global Variables for draw
@@ -375,11 +382,13 @@ String string1 = "1x";
   //
 } //End draw
 void keyPressed() {
-  //
+  //                                     *************renable so mercer does not mad
+  /*
   soundEffects[0].play();
   soundEffects[0].rewind();
   delay(4000); //millisecconds read from draw() println() debugging
   //println ( "KeyPressed:", soundEffect0.length() );
+  */
   //
   keyPressedShortCuts();
   //
