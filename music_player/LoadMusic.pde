@@ -4,7 +4,7 @@ void loadMusic() {
   //
   //Concatenation of Pathway + File Name
   String musicPathway = "Music/"; //From Sketch to Music Folder
-  String soundEffectPathway = "Music/"; //From Sketch to Sound Effect Folder
+  String soundEffectPathway = "Music/"; //From Sketch to Sound Effect Folder             *******Maybe add a message for each song so the song's picture will show, put each image in a new tab
   String tillNoonFileName = "Sleeping_till_noon.mp3";
   String runAwayFileName = "Let's_Run_Away.mp3";
   String odysseyFileName = "Odyssey.mp3";
