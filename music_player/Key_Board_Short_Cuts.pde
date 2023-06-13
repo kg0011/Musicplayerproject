@@ -57,14 +57,18 @@ void autoPlay() {
     if ( autoPlay==false ) {
       songs[currentSong].pause();
       songs[currentSong].rewind();
-      if ( key == 'U' || key=='u' ) autoPlay=true;
-    } else if ( autoPlay==true ) {        //fix******swap false and true statements if still not working
-    songs[currentSong].play();
-    if ( songs[currentSong].isPlaying()==false ) {
-      songs[currentSong].skip(9999999);
-      if ( key == 'U' || key=='u' ) autoPlay=false;
+    } else if ( key == 'U' || key=='u' ) { 
+      autoPlay=true;
+    }  
+    //
+    if ( autoPlay==true ) {        //fix******swap false and true statements if still not working
+      songs[currentSong].play();
+    } else if ( songs[currentSong].position() >= songs[currentSong].length()*5/5 ) {
+      currentSong++;
+      songs[currentSong].play();
+    } else if ( key == 'U' || key=='u' ) {
+        autoPlay=false;
     }
-  }
   //Asks computer if song is playing constantlly
   //When current song ends, rewinds current song and plays the next
 }//End AutoPlay
