@@ -24,48 +24,13 @@ int currentSong = int ( random( numberOfSongs-1 ) );   //starts playlist from ra
 //
 int randomSong = int ( random( numberOfSongs ) );                                      //remove if not used
 //
-int time = 7000;
+int time = 7000;    //***What does this do?***
 //
 Boolean loopSong;
 Boolean loopInfinite;
 //Boolean shufflePlaylist;           <--------  //re enable if this works
 Boolean autoPlay;
 //
-/*
-void textSetup() {
-  //
-  textRectX = buttonReferenceMeasure * 0;
-  textRectY = buttonReferenceMeasure * 0;
-  //
-  rect( textRectX, textRectY, textRectWidth, textRectHeight );
-  //
-  font = createFont ("verdana bold", 55); //Verify font exists
-  //
-//
-void allText() {                                                 //find how to fix this
-  textDraw1();
-  } //End all text
-  //
-  void preTextDraw() {
-  fill(purpleInk); //Ink, hexidecimal copied from Color Selector
-  textAlign (CENTER, CENTER); //Align X&Y, see processing.org / reference
-  //Horizontal Values (X): [LEFT | CENTER | RIGHT]
-  //Vertical Values (Y): [TOP | CENTER | BOTTOM | BASELINE]
-  int textSize = 25; //Change the number until it fits, largest font size
-  textFont(font, textSize);
-  }//End pre text draw
-  //
-  void textDraw1() {
-  preTextDraw();
-  //
-  textSize(25); //Change the number until it fits, largest font size
-  //
-  rect( textRectX1, textRectY1, textRectWidth, textRectHeight );
-  //
-  fill(resetWhiteInk); //reset
-  }//end text draw 1
-//
-*/
 void setup() {
   size(1200, 700); //width, height
   //fullScreen(); //displaywidth, displayheight
@@ -75,6 +40,8 @@ void setup() {
   background(0);
   loadMusic();
   //imageCode();      //implement later
+  //textSetup();     //implement later (if including)
+//
   //
   //songs[0].loop(0);
   //soundEffects[0].loop(0);
@@ -103,7 +70,8 @@ String string1 = "1x";
   float pauseX1, pauseY1;
   float pauseX2, pauseY2;
   float stopX, stopY, stopWidth, stopHeight;
-  float playX, playY, playX1, playY1, playX2, playY2, playX3, playY3;
+  float playX, playY, playX1, playY1, playX2, playY2;
+  float playX3, playY3;
   float muteX, muteY, muteX1, muteY1, muteX2, muteY2, muteX3, muteY3;
   float muteX4, muteY4, muteX5, muteY5, muteX6, muteY6;
   float muteX7, muteY7, muteX8, muteY8, muteX9, muteY9;
@@ -395,7 +363,9 @@ void keyPressed() {
 } //End keyPressed
 //
 void mousePressed() {
-  
+  if ( mouseX >= playX3 ) {
+   playPause(); 
+  }
 } // End mousePressed
 //
 //End MAIN Program
