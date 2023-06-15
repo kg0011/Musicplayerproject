@@ -71,7 +71,7 @@ String string1 = "1x";
   float pauseX2, pauseY2;
   float stopX, stopY, stopWidth, stopHeight;
   float playX, playY, playX1, playY1, playX2, playY2;
-  float playX3, playY3;
+  float playX3, playY3, playRectWidth, playRectHeight;
   float muteX, muteY, muteX1, muteY1, muteX2, muteY2, muteX3, muteY3;
   float muteX4, muteY4, muteX5, muteY5, muteX6, muteY6;
   float muteX7, muteY7, muteX8, muteY8, muteX9, muteY9;
@@ -122,6 +122,8 @@ String string1 = "1x";
   playY2 = pauseY1 - buttonReferenceMeasure * 0;
   playX3 = pauseX - buttonReferenceMeasure * 0;
   playY3 = pauseY - buttonReferenceMeasure * 0;
+  playRectWidth = pauseX - buttonReferenceMeasure * 0;
+  playRectHeight = pauseY - buttonReferenceMeasure * 0;
   //
   ffX1 = pauseX - buttonReferenceMeasure * -2;
   ffY1 = pauseY - buttonReferenceMeasure * -0.5;
@@ -286,8 +288,8 @@ String string1 = "1x";
   rect( pauseX2, pauseY2, buttonSide * 0.3, buttonSide );
   //
   //Play Button
-  //rect( playX3, playY3, buttonSide, buttonSide );
-  triangle( playX, playY, playX1, playY1, playX2, playY2 ); //Layout                            //find out how to code on click
+  triangle( playX, playY, playX1, playY1, playX2, playY2 ); //Layout
+  rect( playX3, playY3, playRectWidth * 0.18, playRectHeight * 0.25 );
   //
   //might need to make a specific area so if mouse is in area, click for button feature is valid
   //
@@ -363,9 +365,7 @@ void keyPressed() {
 } //End keyPressed
 //
 void mousePressed() {
-  if ( mouseX >= playX3 ) {
-   playPause(); 
-  }
+  //mousePressedShortCuts();
 } // End mousePressed
 //
 //End MAIN Program
